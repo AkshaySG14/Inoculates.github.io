@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inoculates Applications</title>
+    <link rel="stylesheet" type="text/css" href="Main.css">
+</head>
+
+<body>
+
+<nav id="Summary">
+    <ul id="menu">
+        <li>
+            <a href="Home Page.html" onclick="resetActive()">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="Memori.html" onclick="resetActive()">
+                Memori
+            </a>
+        </li>
+        <li>
+            <a href="Magnetic Motion Demo.html" onclick="resetActive()">
+                Magnetic Motion Demo
+            </a>
+        </li>
+        <li>
+            <a href="Pixel Knight.html" onclick="resetActive()">
+                Pixel Knight
+            </a>
+        </li>
+        <li>
+            <a href="Dark and Light.html" onclick="resetActive()">
+                Dark and Light
+            </a>
+        </li>
+        <li>
+            <a href="Fates Reprise.html" onclick="resetActive()">
+                Fate's Reprise
+            </a>
+        </li>
+        <li>
+            <a href="Color Synthesizer.html" onclick="resetActive()">
+                Color Synthesizer
+            </a>
+        </li>
+        <li>
+            <a href="Document Encryptor.html" onclick="resetActive()">
+                Document Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="File Encryptor.html" onclick="resetActive()">
+                File Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="Traffic Director.html" onclick="resetActive()">
+                Traffic Director
+            </a>
+        </li>
+        <li>
+            <a href="Space Shooter.html" class="active" onclick="resetActive()">
+                Space Shooter
+            </a>
+        </li>
+    </ul>
+    <script>
+        function resetActive() {
+            sessionStorage.setItem("ActiveSource", 0);
+        }
+    </script>
+</nav>
+
+<div id="navbarVert">
+    <ul id="navigation">
+        <li>
+            <a href="#Summary">Description of Space Shooter</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Screenshots">Screenshots of Game</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Code">Examples of Space Shooter's Source Code</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Download Link">Game Download</a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    var activeSource = -1;
+    if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.getItem("ActiveSource") !== null)
+            activeSource = sessionStorage.getItem("ActiveSource");
+        else {
+            activeSource = 0;
+            sessionStorage.setItem("ActiveSource", activeSource);
+        }
+    }
+</script>
+
+<h1>
+    Space Shooter
+</h1>
+<p>
+    Space Shooter is a desktop game that resembles a basic shooter platformer. It is a 2-D platformer where the player
+    controls a small box that is able to shoot bullets. The game's objectives are simple: the player must reach the end
+    door of each of the three levels and must take care to avoid enemies along the way to win. The game's premise and
+    its controls are simple and easy to understand.
+    <br><br>
+    Space Shooter is operated through the keyboard exclusively. The player uses the WASD keys to maneuver through the
+    game, and J to shoot.
+    <br><br>
+    The game was written in ruby, and utilizes the Gosu framework for rendering the game. Unlike the other games I have
+    made, excluding the drawing and rendering of the sprites in the game, the game engine was entirely designed by
+    myself, from the creation of the manner through which the game is generated, to the way the game objects are
+    rendered. What is seen on the screen was created through the combination of a pixel map and the use of a
+    custom-made camera.
+    <br><br>
+    NOTE: A MAC ONLY application is available for examination or for perusal. This application is essentially a ruby
+    launcher for the game.
+</p>
+
+<hr>
+
+<h2 id="Screenshots" style="margin-top: 0">
+    Screenshots of the game
+    <br>
+    <img src="Assets/spaceshooterscreen1.png" alt="Space Shooter Screenshot One" style="width: 300px; height: 200px;">
+    <img src="Assets/spaceshooterscreen2.png" alt="Space Shooter Screenshot Two" style="width: 300px; height: 200px;">
+    <img src="Assets/spaceshooterscreen3.png" alt="Space Shooter Screenshot Three" style="width: 300px; height: 200px;">
+    <img src="Assets/spaceshooterscreen4.png" alt="Space Shooter Screenshot Four" style="width: 300px; height: 200px;">
+    <img src="Assets/spaceshooterscreen5.png" alt="Space Shooter Screenshot Five" style="width: 300px; height: 200px;">
+    <img src="Assets/spaceshooterscreen6.png" alt="Space Shooter Screenshot Six" style="width: 300px; height: 200px;">
+    <img src="Assets/spaceshooterscreen7.png" alt="Space Shooter Screenshot Seven" style="width: 300px; height: 200px;">
+    <img src="Assets/spaceshooterscreen8.png" alt="Space Shooter Screenshot Eight" style="width: 300px; height: 200px;">
+    <img src="Assets/spaceshooterscreen9.png" alt="Space Shooter Screenshot Nine" style="width: 300px; height: 200px;">
+</h2>
+
+<hr>
+
+<h3 id="Code" style="margin-top: 0">
+    How and Why Space Shooter Was Made
+</h3>
+
+<p>
+    As my last game, Space Shooter was meant to serve as a way to familiarize myself with a more modern programming
+    language - Ruby. Though decently similar to Python in my opinion, I found Ruby to be a very flexible and high-level
+    language that allowed me to easily program a game (much unlike the wrestling matches with Java and C++). Using the
+    Gosu development library PURELY for rendering, I created Space Shooter. The game itself has a CUSTOM-BUILT engine
+    that was specifically made by me to make the creation of the game much simpler. This differs from my previous in
+    that I built an engine from the ground-up to make the game much simpler.
+    <br><br>
+    Language-wise, Space Shooter is written in Ruby and utilizes the Gosu development library. Due to its nearly
+    complete originality, the code is a bit raw but entirely readable.
+    <br>
+</p>
+
+<h4 style="margin-top: 0">
+    Here's some of the source code for Space Shooter
+    <br>
+
+    <button class="button" id="Player" onclick="changeButton(this)">
+        Player.rb
+    </button>
+    <button class="button" id="InputController" onclick="changeButton(this)">
+        InputController.rb
+    </button>
+    <button class="button" id="Camera" onclick="changeButton(this)">
+        Camera.rb
+    </button>
+    <button class="button" id="Map" onclick="changeButton(this)">
+        Map.rb
+    </button>
+    <button class="button" id="MapObject" onclick="changeButton(this)">
+        MapObject.rb
+    </button>
+    <button class="button" id="Enemy" onclick="changeButton(this)">
+        Enemy.rb
+    </button>
+    <br>
+    <button class="button" style="margin-left: 40px; margin-top: 5px;" id="Effect" onclick="changeButton(this)">
+        Effect.rb
+    </button>
+    <button class="button" id="Turret" onclick="changeButton(this)">
+        Turret.rb
+    </button>
+    <button class="button" id="Charger" onclick="changeButton(this)">
+        Charger.rb
+    </button>
+    <button class="button" id="XShooter" onclick="changeButton(this)">
+        XShooter.rb
+    </button>
+    <button class="button" style="margin-bottom: 5px" id="MissileLauncher" onclick="changeButton(this)">
+        MissileLauncher.rb
+    </button>
+
+    <br>
+
+    <span id="playersource">
+<script src="https://gist.github.com/Inoculates/836db57716d58e0d18f7.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 0)
+            document.getElementById("playersource").innerHTML = "";
+        else
+            document.getElementById("Player").className = "activebutton";
+    </script>
+
+    <span id="inputcontrollersource">
+<script src="https://gist.github.com/Inoculates/48c261fa15e5a9048c1a.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 1)
+            document.getElementById("inputcontrollersource").innerHTML = "";
+        else
+            document.getElementById("InputController").className = "activebutton";
+    </script>
+
+        <span id="camerasource">
+<script src="https://gist.github.com/Inoculates/76f4950f4cfce8901868.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 2)
+            document.getElementById("camerasource").innerHTML = "";
+        else
+            document.getElementById("Camera").className = "activebutton";
+    </script>
+
+    <span id="mapsource">
+<script src="https://gist.github.com/Inoculates/5b9bff7a85d99a23ed6b.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 3)
+            document.getElementById("mapsource").innerHTML = "";
+        else
+            document.getElementById("Map").className = "activebutton";
+    </script>
+
+        <span id="mapobjectsource">
+<script src="https://gist.github.com/Inoculates/24affefbdaf8e01bf0d7.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 4)
+            document.getElementById("mapobjectsource").innerHTML = "";
+        else
+            document.getElementById("MapObject").className = "activebutton";
+    </script>
+
+    <span id="enemysource">
+<script src="https://gist.github.com/Inoculates/6145300a1389dc504813.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 5)
+            document.getElementById("enemysource").innerHTML = "";
+        else
+            document.getElementById("Enemy").className = "activebutton";
+    </script>
+
+        <span id="effectsource">
+<script src="https://gist.github.com/Inoculates/67617f1828c329b4c347.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 6)
+            document.getElementById("effectsource").innerHTML = "";
+        else
+            document.getElementById("Effect").className = "activebutton";
+    </script>
+
+    <span id="turretsource">
+<script src="https://gist.github.com/Inoculates/629f4cce8ea599585092.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 7)
+            document.getElementById("turretsource").innerHTML = "";
+        else
+            document.getElementById("Turret").className = "activebutton";
+    </script>
+
+        <span id="chargersource">
+<script src="https://gist.github.com/Inoculates/c6b66fbadfe6e589da27.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 8)
+            document.getElementById("chargersource").innerHTML = "";
+        else
+            document.getElementById("Charger").className = "activebutton";
+    </script>
+
+    <span id="xshootersource">
+<script src="https://gist.github.com/Inoculates/196f3ab67c508938fa3e.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 9)
+            document.getElementById("xshootersource").innerHTML = "";
+        else
+            document.getElementById("XShooter").className = "activebutton";
+    </script>
+
+        <span id="missilelaunchersource">
+<script src="https://gist.github.com/Inoculates/0f42bff15eb8fb5508ab.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 10)
+            document.getElementById("missilelaunchersource").innerHTML = "";
+        else
+            document.getElementById("MissileLauncher").className = "activebutton";
+    </script>
+</h4>
+
+<script>
+    function changeButton(button) {
+        if (button.id == "Player") {
+            sessionStorage.setItem("ActiveSource", 0);
+            location.reload();
+        }
+        else if (button.id == "InputController") {
+            sessionStorage.setItem("ActiveSource", 1);
+            location.reload();
+        }
+        else if (button.id == "Camera") {
+            sessionStorage.setItem("ActiveSource", 2);
+            location.reload();
+        }
+        else if (button.id == "Map") {
+            sessionStorage.setItem("ActiveSource", 3);
+            location.reload();
+        }
+        else if (button.id == "MapObject") {
+            sessionStorage.setItem("ActiveSource", 4);
+            location.reload();
+        }
+        else if (button.id == "Enemy") {
+            sessionStorage.setItem("ActiveSource", 5);
+            location.reload();
+        }
+        else if (button.id == "Effect") {
+            sessionStorage.setItem("ActiveSource", 6);
+            location.reload();
+        }
+        else if (button.id == "Turret") {
+            sessionStorage.setItem("ActiveSource", 7);
+            location.reload();
+        }
+        else if (button.id == "Charger") {
+            sessionStorage.setItem("ActiveSource", 8);
+            location.reload();
+        }
+        else if (button.id == "XShooter") {
+            sessionStorage.setItem("ActiveSource", 9);
+            location.reload();
+        }
+        else if (button.id == "MissileLauncher") {
+            sessionStorage.setItem("ActiveSource", 10);
+            location.reload();
+        }
+    }
+</script>
+
+<p>
+    Here is a link to my github project for Space Shooter:
+    <img src="Assets/github.png" alt="Github Link" style="width:60px; height:60px;" align="middle"
+         usemap="#githubmap" hidefocus="true">
+
+    <map name="githubmap">
+        <area shape="circle" coords="60 60 60" style="border: none; outline-style: none;"
+              href="https://github.com/Inoculates/Space-Shooter">
+    </map>
+</p>
+
+<hr>
+
+<h6 id="Download Link" style="margin-top: 0">
+    Game Download
+    <a href="Assets/SpaceShooter.zip" target="_blank">
+        <img src="Assets/download.svg" alt="Download Link" style="width:40px; height:40px; border:0" align="middle">
+    </a>
+</h6>
+
+<p>
+    Here is the download link for the game. Enjoy!
+    <br>
+
+</p>
+
+<footer>
+    Copyright © Akshay Subramaniam
+</footer>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inoculates Applications</title>
+    <link rel="stylesheet" type="text/css" href="Main.css">
+</head>
+
+<body>
+
+<nav id="Summary">
+    <ul id="menu">
+        <li>
+            <a href="Home Page.html" onclick="resetActive()">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="Memori.html" onclick="resetActive()">
+                Memori
+            </a>
+        </li>
+        <li>
+            <a href="Magnetic Motion Demo.html" onclick="resetActive()">
+                Magnetic Motion Demo
+            </a>
+        </li>
+        <li>
+            <a href="Pixel Knight.html" onclick="resetActive()">
+                Pixel Knight
+            </a>
+        </li>
+        <li>
+            <a href="Dark and Light.html" onclick="resetActive()">
+                Dark and Light
+            </a>
+        </li>
+        <li>
+            <a href="Fates Reprise.html" onclick="resetActive()">
+                Fate's Reprise
+            </a>
+        </li>
+        <li>
+            <a href="Color Synthesizer.html" onclick="resetActive()">
+                Color Synthesizer
+            </a>
+        </li>
+        <li>
+            <a href="Document Encryptor.html" class="active" onclick="resetActive()">
+                Document Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="File Encryptor.html" onclick="resetActive()">
+                File Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="Traffic Director.html" onclick="resetActive()">
+                Traffic Director
+            </a>
+        </li>
+        <li>
+            <a href="Space Shooter.html" onclick="resetActive()">
+                Space Shooter
+            </a>
+        </li>
+    </ul>
+    <script>
+        function resetActive() {
+            sessionStorage.setItem("ActiveSource", 0);
+        }
+    </script>
+</nav>
+
+<div id="navbarVert">
+    <ul id="navigation">
+        <li>
+            <a href="#Summary">Description of Document Encryptor</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Screenshots">Screenshots of Application</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Code">Source Code of Document Encryptor</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Download Link">App Download</a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    var activeSource = -1;
+    if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.getItem("ActiveSource") !== null)
+            activeSource = sessionStorage.getItem("ActiveSource");
+        else {
+            activeSource = 0;
+            sessionStorage.setItem("ActiveSource", activeSource);
+        }
+    }
+</script>
+
+<h1>
+    Document Encryptor
+</h1>
+<p>
+    Document Encryptor is a mac based application that allows the user to encrypt a text file (in the format txt) using
+    one of three ciphers. These ciphers are old ciphers and are not meant to represent new techniques, but are merely
+    applications of very basic cryptology methods. The ciphers are: the Playfair Cipher, the Hill Cipher, and the Double
+    Columnar Transposition Cipher. Each of these ciphers can be selected to encrypt the text document, and additionally
+    the Double Columnar Transposition Cipher can be combined with the other two to create an even more complex cipher.
+    The program also decrypts any files it has encrypted in the past. The user need not even select which cipher to
+    decrypt with; the program figures this out by itself. For encryption, the program simply requires the user to input
+    the file location, and which cipher to use. For decryption, the user need only enter the location of the file that
+    needs to be decrypted.
+    <br><br>
+    The application was created in Xcode, and written in C++ as a way to familiarize myself with cryptology. Though
+    written completely in C++, the code is built on the SFML framework, which provided the necessary functions for the
+    code to work. Regardless, anyone versed in C++ would be able to easily examine the code.
+    <br><br>
+    To launch the application, a mac with the latest OS is required. The application itself can be launched immediately
+    once downloaded. It requires a mouse/trackpad and a keyboard to operate. The user should be able to easily navigate
+    through the UI to interact with the application. Note that the full file path of the document should be entered. For
+    example: /Users/akshaysubramaniam/Documents/Example.txt.
+    <br><br>
+    Note that some symbols will NOT work with the program. These are symbols such as ["], ['], or [~]. Symbols like
+    [.], [,], and all shift+number keys will work. In creating a text file, the user is advised to use a minimal amount
+    of symbols. If a error should crash the program, it will most likely result from the usage of an illegal symbol.
+    <br><br>
+    NOTE: This application can only be downloaded on Mac Operating Systems.
+<hr>
+
+<h2 id="Screenshots" style="margin-top: 0">
+    Screenshots of the application
+    <br>
+    <img src="Assets/documentencryptorscreen1.png" alt="Document Encryptor Screenshot One" border="1" style="width: 400px; height: 300px;">
+    <img src="Assets/documentencryptorscreen2.png" alt="Document Encryptor Screenshot Two" border="1" style="width: 400px; height: 300px;">
+    <img src="Assets/documentencryptorscreen3.png" alt="Document Encryptor Screenshot Three" border="1" style="width: 400px; height: 300px;">
+    <img src="Assets/documentencryptorscreen4.png" alt="Document Encryptor Screenshot Four" border="1" style="width: 400px; height: 300px;">
+    <img src="Assets/documentencryptorscreen5.png" alt="Document Encryptor Screenshot Five" border="1" style="width: 400px; height: 300px;">
+    <img src="Assets/documentencryptorscreen6.png" alt="Document Encryptor Screenshot Six" border="1" style="width: 400px; height: 300px;">
+</h2>
+
+<hr>
+
+<h3 id="Code" style="margin-top: 0">
+    How and Why Document Encryptor Was Made
+</h3>
+
+<p>
+    After finishing Color Synthesizer, I began to develop an interest in developing more mathematically heavy applications
+    in C++. Research led me to learing about crytography, which I began to take an active interest in. As a result, I
+    started to code in C++ the beginnings of a crytography application. My initial desire was to implement a modern
+    crytography application, but I later opted to do a simpler application to get the basics of crytography down. This
+    was the motivation behind the creation of the Document Encryptor app, which uses primitive cryptographic methods to
+    encrypt text strings.
+    <br><br>
+    Document Encryptor is entirely written in C++, and only differs from the basic language in that it uses the SFML
+    framework for rendering purposes. However, the code can very easily be understood by someone versed in C++, and
+    simply uses basic logic for the majority of its functions.
+    <br>
+</p>
+
+<h4 style="margin-top: 0">
+    Here's some of the source code for Document Encryptor
+    <br>
+
+    <button class="button" style="margin-left: 130px;" id="TextEncryptor.cpp" onclick="changeButton(this)">
+        TextEncryptor.cpp
+    </button>
+    <button class="button" id="TextEncryptor.h" onclick="changeButton(this)">
+        TextEncryptor.h
+    </button>
+    <button class="button" id="Encryptor.cpp" onclick="changeButton(this)">
+        Encryptor.cpp
+    </button>
+    <button class="button" id="Decryptor.cpp" onclick="changeButton(this)">
+        Decryptor.cpp
+    </button>
+    <button class="button" id="Cipher.cpp" onclick="changeButton(this)">
+        Cipher.cpp
+    </button>
+    <br>
+    <button class="button"  style="margin-top: 5px;" id="PlayfairCipher.cpp" onclick="changeButton(this)">
+        PlayfairCipher.cpp
+    </button>
+    <button class="button" id="HillCipher.cpp" onclick="changeButton(this)">
+        HillCipher.cpp
+    </button>
+    <button class="button" id="ColumnarTransposition.cpp" onclick="changeButton(this)">
+        ColumnarTransposition.cpp
+    </button>
+    <button class="button" id="ThreeByOneMatrix.cpp" onclick="changeButton(this)">
+        ThreeByOneMatrix.cpp
+    </button>
+    <button class="button" id="ThreeByThreeMatrix.cpp" onclick="changeButton(this)">
+        ThreeByThreeMatrix.cpp
+    </button>
+    <br><br>
+
+    <span id="textencryptorcppsource">
+<script src="https://gist.github.com/Inoculates/82aa906397db7052da22.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 0)
+            document.getElementById("textencryptorcppsource").innerHTML = "";
+        else
+            document.getElementById("TextEncryptor.cpp").className = "activebutton";
+    </script>
+
+    <span id="textencryptorhsource">
+<script src="https://gist.github.com/Inoculates/c0f63e9817fd87bc7d52.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 1)
+            document.getElementById("textencryptorhsource").innerHTML = "";
+        else
+            document.getElementById("TextEncryptor.h").className = "activebutton";
+    </script>
+
+        <span id="encryptorsource">
+<script src="https://gist.github.com/Inoculates/ed8a41edc7d3eabed24d.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 2)
+            document.getElementById("encryptorsource").innerHTML = "";
+        else
+            document.getElementById("Encryptor.cpp").className = "activebutton";
+    </script>
+
+    <span id="decryptorsource">
+<script src="https://gist.github.com/Inoculates/21630a7d8abe20b06a0e.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 3)
+            document.getElementById("decryptorsource").innerHTML = "";
+        else
+            document.getElementById("Decryptor.cpp").className = "activebutton";
+    </script>
+
+        <span id="ciphersource">
+<script src="https://gist.github.com/Inoculates/754d736229fd6b4c2112.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 4)
+            document.getElementById("ciphersource").innerHTML = "";
+        else
+            document.getElementById("Cipher.cpp").className = "activebutton";
+    </script>
+
+    <span id="playfairciphersource">
+<script src="https://gist.github.com/Inoculates/fd99f27573d4ddf1897e.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 5)
+            document.getElementById("playfairciphersource").innerHTML = "";
+        else
+            document.getElementById("PlayfairCipher.cpp").className = "activebutton";
+    </script>
+
+        <span id="hillciphersource">
+<script src="https://gist.github.com/Inoculates/86d673e39166e24a59a9.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 6)
+            document.getElementById("hillciphersource").innerHTML = "";
+        else
+            document.getElementById("HillCipher.cpp").className = "activebutton";
+    </script>
+
+    <span id="columnartranspositionsource">
+<script src="https://gist.github.com/Inoculates/ec4de3fcce5568a67216.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 7)
+            document.getElementById("columnartranspositionsource").innerHTML = "";
+        else
+            document.getElementById("ColumnarTransposition.cpp").className = "activebutton";
+    </script>
+
+        <span id="threebyonematrixsource">
+<script src="https://gist.github.com/Inoculates/978cf4c4afbdb7b08e03.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 8)
+            document.getElementById("threebyonematrixsource").innerHTML = "";
+        else
+            document.getElementById("ThreeByOneMatrix.cpp").className = "activebutton";
+    </script>
+
+            <span id="threebythreematrixsource">
+<script src="https://gist.github.com/Inoculates/cfb4b9ad87465cdcb7ab.js"></script>
+            </span>
+
+    <script>
+        if (activeSource != 9)
+            document.getElementById("threebythreematrixsource").innerHTML = "";
+        else
+            document.getElementById("ThreeByThreeMatrix.cpp").className = "activebutton";
+    </script>
+</h4>
+
+<script>
+    function changeButton(button) {
+        if (button.id == "TextEncryptor.cpp") {
+            sessionStorage.setItem("ActiveSource", 0);
+            location.reload();
+        }
+        else if (button.id == "TextEncryptor.h") {
+            sessionStorage.setItem("ActiveSource", 1);
+            location.reload();
+        }
+        else if (button.id == "Encryptor.cpp") {
+            sessionStorage.setItem("ActiveSource", 2);
+            location.reload();
+        }
+        else if (button.id == "Decryptor.cpp") {
+            sessionStorage.setItem("ActiveSource", 3);
+            location.reload();
+        }
+        else if (button.id == "Cipher.cpp") {
+            sessionStorage.setItem("ActiveSource", 4);
+            location.reload();
+        }
+        else if (button.id == "PlayfairCipher.cpp") {
+            sessionStorage.setItem("ActiveSource", 5);
+            location.reload();
+        }
+        else if (button.id == "HillCipher.cpp") {
+            sessionStorage.setItem("ActiveSource", 6);
+            location.reload();
+        }
+        else if (button.id == "ColumnarTransposition.cpp") {
+            sessionStorage.setItem("ActiveSource", 7);
+            location.reload();
+        }
+        else if (button.id == "ThreeByOneMatrix.cpp") {
+            sessionStorage.setItem("ActiveSource", 8);
+            location.reload();
+        }
+        else if (button.id == "ThreeByThreeMatrix.cpp") {
+            sessionStorage.setItem("ActiveSource", 9);
+            location.reload();
+        }
+    }
+</script>
+<script>
+    function changeButton(button) {
+        if (button.id == "TextEncryptor.cpp") {
+            sessionStorage.setItem("ActiveSource", 0);
+            location.reload();
+        }
+        else if (button.id == "TextEncryptor.h") {
+            sessionStorage.setItem("ActiveSource", 1);
+            location.reload();
+        }
+        else if (button.id == "Encryptor.cpp") {
+            sessionStorage.setItem("ActiveSource", 2);
+            location.reload();
+        }
+        else if (button.id == "Decryptor.cpp") {
+            sessionStorage.setItem("ActiveSource", 3);
+            location.reload();
+        }
+        else if (button.id == "Cipher.cpp") {
+            sessionStorage.setItem("ActiveSource", 4);
+            location.reload();
+        }
+        else if (button.id == "PlayfairCipher.cpp") {
+            sessionStorage.setItem("ActiveSource", 5);
+            location.reload();
+        }
+        else if (button.id == "HillCipher.cpp") {
+            sessionStorage.setItem("ActiveSource", 6);
+            location.reload();
+        }
+        else if (button.id == "ColumnarTransposition.cpp") {
+            sessionStorage.setItem("ActiveSource", 7);
+            location.reload();
+        }
+        else if (button.id == "ThreeByOneMatrix.cpp") {
+            sessionStorage.setItem("ActiveSource", 8);
+            location.reload();
+        }
+        else if (button.id == "ThreeByThreeMatrix.cpp") {
+            sessionStorage.setItem("ActiveSource", 9);
+            location.reload();
+        }
+    }
+</script>
+
+<p>
+    Here is a link to my github project for Document Encryptor:
+    <img src="Assets/github.png" alt="Github Link" style="width:60px; height:60px; border:0" align="middle"
+         usemap="#githubmap">
+
+    <map name="githubmap">
+        <area shape="circle" coords="60 60 60" style="border: none; outline-style: none;"
+              href="https://github.com/Inoculates/Document-Encryptor">
+    </map>
+</p>
+
+<hr>
+
+<h6 id="Download Link" style="margin-top: 0">
+    Application Download
+    <a href="Assets/DocumentEncryptor.zip" target="_blank">
+        <img src="Assets/download.svg" alt="Download Link" style="width:40px; height:40px; border:0" align="middle">
+    </a>
+</h6>
+
+<p>
+    Here is the download link for the application. Enjoy!
+    <br>
+
+</p>
+
+<footer>
+    Copyright © Akshay Subramaniam
+</footer>
+</body>
+</html>

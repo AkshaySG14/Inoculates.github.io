@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inoculates Applications</title>
+    <link rel="stylesheet" href="Main.css">
+</head>
+
+<body>
+
+<nav id="Summary">
+    <ul id="menu">
+        <li>
+            <a href="Home Page.html" onclick="resetActive()">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="Memori.html" onclick="resetActive()">
+                Memori
+            </a>
+        </li>
+        <li>
+            <a href="Magnetic Motion Demo.html" onclick="resetActive()">
+                Magnetic Motion Demo
+            </a>
+        </li>
+        <li>
+            <a href="Pixel Knight.html" onclick="resetActive()">
+                Pixel Knight
+            </a>
+        </li>
+        <li>
+            <a href="Dark and Light.html" onclick="resetActive()">
+                Dark and Light
+            </a>
+        </li>
+        <li>
+            <a href="Fates Reprise.html" onclick="resetActive()">
+                Fate's Reprise
+            </a>
+        </li>
+        <li>
+            <a href="Color Synthesizer.html" class="active" onclick="resetActive()">
+                Color Synthesizer
+            </a>
+        </li>
+        <li>
+            <a href="Document Encryptor.html" onclick="resetActive()">
+                Document Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="File Encryptor.html" onclick="resetActive()">
+                File Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="Traffic Director.html" onclick="resetActive()">
+                Traffic Director
+            </a>
+        </li>
+        <li>
+            <a href="Space Shooter.html" onclick="resetActive()">
+                Space Shooter
+            </a>
+        </li>
+    </ul>
+    <script>
+        function resetActive() {
+            sessionStorage.setItem("ActiveSource", 0);
+        }
+    </script>
+</nav>
+
+<div id="navbarVert">
+    <ul id="navigation">
+        <li>
+            <a href="#Summary">Description of Color Synthesizer</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Screenshots">Screenshots of Application</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Code">Source Code of Color Synthesizer</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Download Link">App Download</a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    var activeSource = -1;
+    if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.getItem("ActiveSource") !== null)
+            activeSource = sessionStorage.getItem("ActiveSource");
+        else {
+            activeSource = 0;
+            sessionStorage.setItem("ActiveSource", activeSource);
+        }
+    }
+</script>
+
+<h1>
+    Color Synthesizer
+</h1>
+<p>
+    Color Synthesizer is a mac application that allows the user to interact with a "pixel board". By coloring pixels on
+    the board, the user can create a variety of colorful patterns, of any shape or size. The application allows the user
+    to change the cursor size, to erase or fill the pixel board, and to create nearly any color through three color
+    sliders.
+    <br><br>
+    The application itself was created in Xcode, and written in C++ as a learning experience. Though written completely
+    in C++, the code is built on the SFML framework, which provided the functions necessary for the code to work.
+    Regardless, anyone versed in C++ would be able to easily examine the code.
+    <br><br>
+    To launch the application, a mac with the latest OS is required. The application itself can be launched immediately
+    once downloaded. Due to the simplicity of the application, it only requires a mouse/trackpad. The user should be
+    able to easily navigate through the UI to interact with the application.
+    <br><br>
+    NOTE: This application can only be downloaded on Mac Operating Systems.
+<hr>
+
+<h2 id="Screenshots" style="margin-top: 0">
+    Screenshots of the application
+    <br>
+    <img src="Assets/colorsynthesizerscreen1.png" alt="ColorSynthesizer Screenshot One" style="width: 400px; height: 320px;">
+    <img src="Assets/colorsynthesizerscreen2.png" alt="ColorSynthesizer Screenshot Two" style="width: 400px; height: 320px;">
+    <img src="Assets/colorsynthesizerscreen3.png" alt="ColorSynthesizer Screenshot Three" style="width: 400px; height: 320px;">
+    <img src="Assets/colorsynthesizerscreen4.png" alt="ColorSynthesizer Screenshot Four" style="width: 400px; height: 320px;">
+    <img src="Assets/colorsynthesizerscreen5.png" alt="ColorSynthesizer Screenshot Five" style="width: 400px; height: 320px;">
+    <img src="Assets/colorsynthesizerscreen6.png" alt="ColorSynthesizer Screenshot Six" style="width: 400px; height: 320px;">
+</h2>
+
+<hr>
+
+<h3 id="Code" style="margin-top: 0">
+    How and Why Color Synthesizer Was Made
+</h3>
+
+<p>
+    My first attempts at writing C++ gradually coalesced into Color Synthesizer. Though originally a simple application
+    designed purely for exploratory purposes, Color Synthesizer was developed as a fully-fledged application with the
+    help of the SFML framework. Thus, Color Synthesizer, though basic in its composition, is a completed application
+    that users can not only interact with but learn from as well.
+    <br><br>
+    Color Synthesizer is entirely written in C++, and only differs from the basic language in that it uses the SFML
+    framework for rendering purposes. However, the code can very easily be understood by someone versed in C++, and
+    simply uses basic logic for the majority of its functions.
+    <br>
+</p>
+
+<h4 style="margin-top: 0">
+    Here's the source code for Color Synthesizer
+    <br>
+
+    <button class="button" id="Main" onclick="changeButton(this)">
+        Main.cpp
+    </button>
+    <button class="button" id="ColorManager.cpp" onclick="changeButton(this)">
+        ColorManager.cpp
+    </button>
+    <button class="button" id="ColorManager.h" onclick="changeButton(this)">
+        ColorManager.h
+    </button>
+    <button class="button" id="CursorManager.cpp" onclick="changeButton(this)">
+        CursorManager.cpp
+    </button>
+    <button class="button" id="CursorManager.h" onclick="changeButton(this)">
+        CursorManager.h
+    </button>
+    <br>
+    <button class="button" style="margin-left: 25px; margin-top: 5px;" id="WindowManager.cpp" onclick="changeButton(this)">
+        WindowManager.cpp
+    </button>
+    <button class="button" id="WindowManager.h" onclick="changeButton(this)">
+        WindowManager.h
+    </button>
+    <button class="button" id="ResourcePath.mm" onclick="changeButton(this)">
+        ResourcePath.mm
+    </button>
+    <button class="button" id="ResourcePath.h" onclick="changeButton(this)">
+        ResourcePath.h
+    </button>
+    <br><br>
+
+    <span id="mainsource">
+<script src="https://gist.github.com/Inoculates/a8bc84f8db32314444e8.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 0)
+            document.getElementById("mainsource").innerHTML = "";
+        else
+            document.getElementById("Main").className = "activebutton";
+    </script>
+
+    <span id="colormanagercppsource">
+<script src="https://gist.github.com/Inoculates/b5396aa0d8ddb0f787d3.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 1)
+            document.getElementById("colormanagercppsource").innerHTML = "";
+        else
+            document.getElementById("ColorManager.cpp").className = "activebutton";
+    </script>
+
+        <span id="colormanagerhsource">
+<script src="https://gist.github.com/Inoculates/ad52a5b9aa649e8d6b66.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 2)
+            document.getElementById("colormanagerhsource").innerHTML = "";
+        else
+            document.getElementById("ColorManager.h").className = "activebutton";
+    </script>
+
+    <span id="cursormanagercppsource">
+<script src="https://gist.github.com/Inoculates/cda395c49320b1f3ff37.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 3)
+            document.getElementById("cursormanagercppsource").innerHTML = "";
+        else
+            document.getElementById("CursorManager.cpp").className = "activebutton";
+    </script>
+
+        <span id="cursormanagerhsource">
+<script src="https://gist.github.com/Inoculates/60d0171d66fe31b609ef.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 4)
+            document.getElementById("cursormanagerhsource").innerHTML = "";
+        else
+            document.getElementById("CursorManager.h").className = "activebutton";
+    </script>
+
+    <span id="windowmanagercppsource">
+<script src="https://gist.github.com/Inoculates/7d6d41884f7c1920bfb8.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 5)
+            document.getElementById("windowmanagercppsource").innerHTML = "";
+        else
+            document.getElementById("WindowManager.cpp").className = "activebutton";
+    </script>
+
+        <span id="windowmanagerhsource">
+<script src="https://gist.github.com/Inoculates/e1ef170e9f6362ab2994.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 6)
+            document.getElementById("windowmanagerhsource").innerHTML = "";
+        else
+            document.getElementById("WindowManager.h").className = "activebutton";
+    </script>
+
+    <span id="resourcepathmmsource">
+<script src="https://gist.github.com/Inoculates/ad0b892afceb8c955534.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 7)
+            document.getElementById("resourcepathmmsource").innerHTML = "";
+        else
+            document.getElementById("ResourcePath.mm").className = "activebutton";
+    </script>
+
+        <span id="resourcepathhsource">
+<script src="https://gist.github.com/Inoculates/5f7e69913ed312206d55.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 8)
+            document.getElementById("resourcepathhsource").innerHTML = "";
+        else
+            document.getElementById("ResourcePath.h").className = "activebutton";
+    </script>
+</h4>
+
+<script>
+    function changeButton(button) {
+        if (button.id == "Main") {
+            sessionStorage.setItem("ActiveSource", 0);
+            location.reload();
+        }
+        else if (button.id == "ColorManager.cpp") {
+            sessionStorage.setItem("ActiveSource", 1);
+            location.reload();
+        }
+        else if (button.id == "ColorManager.h") {
+            sessionStorage.setItem("ActiveSource", 2);
+            location.reload();
+        }
+        else if (button.id == "CursorManager.cpp") {
+            sessionStorage.setItem("ActiveSource", 3);
+            location.reload();
+        }
+        else if (button.id == "CursorManager.h") {
+            sessionStorage.setItem("ActiveSource", 4);
+            location.reload();
+        }
+        else if (button.id == "WindowManager.cpp") {
+            sessionStorage.setItem("ActiveSource", 5);
+            location.reload();
+        }
+        else if (button.id == "WindowManager.h") {
+            sessionStorage.setItem("ActiveSource", 6);
+            location.reload();
+        }
+        else if (button.id == "ResourcePath.mm") {
+            sessionStorage.setItem("ActiveSource", 7);
+            location.reload();
+        }
+        else if (button.id == "ResourcePath.h") {
+            sessionStorage.setItem("ActiveSource", 8);
+            location.reload();
+        }
+    }
+</script>
+
+<p>
+    Here is a link to my github project for Color Synthesizer:
+    <img src="Assets/github.png" alt="Github Link" style="width:60px; height:60px; border:0" align="middle"
+         usemap="#githubmap">
+
+    <map name="githubmap">
+        <area shape="circle" coords="60 60 60" style="border: none; outline-style: none;"
+              href="https://github.com/Inoculates/Color-Synthesizer">
+    </map>
+</p>
+
+<hr>
+
+<h6 id="Download Link" style="margin-top: 0">
+    Application Download
+    <a href="Assets/ColorSynthesizer.zip" target="_blank">
+        <img src="Assets/download.svg" alt="Download Link" style="width:40px; height:40px; border:0" align="middle">
+    </a>
+</h6>
+
+<p>
+    Here is the download link for the application. Enjoy!
+    <br>
+
+</p>
+
+<footer>
+    Copyright © Akshay Subramaniam
+</footer>
+</body>
+</html>

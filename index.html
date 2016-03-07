@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inoculates Applications</title>
+    <link rel="stylesheet" type="text/css" href="Main.css">
+</head>
+
+<body>
+
+<nav id="Summary">
+    <ul id="menu">
+        <li>
+            <a href="Home Page.html" class="active" onclick="resetActive()">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="Memori.html" onclick="resetActive()">
+                Memori
+            </a>
+        </li>
+        <li>
+            <a href="Magnetic Motion Demo.html" onclick="resetActive()">
+                Magnetic Motion Demo
+            </a>
+        </li>
+        <li>
+            <a href="Pixel Knight.html" onclick="resetActive()">
+                Pixel Knight
+            </a>
+        </li>
+        <li>
+            <a href="Dark and Light.html" onclick="resetActive()">
+                Dark and Light
+            </a>
+        </li>
+        <li>
+            <a href="Fates Reprise.html" onclick="resetActive()">
+                Fate's Reprise
+            </a>
+        </li>
+        <li>
+            <a href="Color Synthesizer.html" onclick="resetActive()">
+                Color Synthesizer
+            </a>
+        </li>
+        <li>
+            <a href="Document Encryptor.html" onclick="resetActive()">
+                Document Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="File Encryptor.html" onclick="resetActive()">
+                File Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="Traffic Director.html" onclick="resetActive()">
+                Traffic Director
+            </a>
+        </li>
+        <li>
+            <a href="Space Shooter.html" onclick="resetActive()">
+                Space Shooter
+            </a>
+        </li>
+    </ul>
+    <script>
+        function resetActive() {
+            sessionStorage.setItem("ActiveSource", 0);
+        }
+    </script>
+</nav>
+
+<div id="navbarVert">
+    <ul id="navigation">
+        <li>
+            <a href="#Summary">Summary of Website</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Code">Code of this Website</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Download Link">Source Code Download</a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    var activeSource = -1;
+    if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.getItem("ActiveSource") !== null)
+            activeSource = sessionStorage.getItem("ActiveSource");
+        else {
+            activeSource = 0;
+            sessionStorage.setItem("ActiveSource", activeSource);
+        }
+    }
+</script>
+
+<h1>
+    Welcome to Inoculates Applications
+</h1>
+
+<p>
+    My love for programming began in a very humble environment. Back around the early 2000's when I was very young,
+    I used to program Warcraft III: The Frozen Throne games. Though my youthful inexperience prevented me from
+    completing any of these custom games, my passion for programming was both sparked and stoked through my early attempts,
+    and I learned a great deal of coding principles from the psuedo-language JASS.
+    <br><br>
+    As I grew, I began to learn actual
+    programming languages, and utilized my newly gained knowledge to create the various programs on this site.
+    These applications are not only an expression of my love for programming, but also show how far I've come as a
+    software developer since I began. Additionally, these projects greatly boosted my knowledge each individual
+    programming languages and software development as a whole.
+</p>
+<p>
+    This site is a compilation of all the different projects I've worked on thus far. These have been written in a
+    variety of languages and are based on different rendering engines.
+    <br><br>
+    Note that these projects are coded without the use of any software to develop them (other than IDE's). This means
+    means that they are for the most part written completely from scratch (some entirely so), and can be read solely
+    based on knowledge accrued from study of the various programming languages. Enjoy!
+</p>
+
+<hr>
+
+<h2 id="Code">
+    How This Website Was Made
+</h2>
+<p>
+    This site was made in very basic HTML, CSS, and JavaScript. Its code can be easily read and modified, and can serve
+    as a beginner's learning tool. Its purpose was to help me learn and apply the basic techniques of web development.
+    Unlike my knowledge of software language and development, my experience in the realm of web development is very
+    little, and I sought to improve it through the construction of this Website.
+</p>
+
+<h3>
+    Here's the source code for the pages of this Website.
+
+    <br>
+
+    <button class="button" id="homepagebutton" onclick="changeButton(this)">
+        Home Page Code
+    </button>
+    <button class="button" id="memoributton" onclick="changeButton(this)">
+        Memori
+    </button>
+    <button class="button" id="magneticmotionbutton" onclick="changeButton(this)">
+        Magnetic Motion Demo
+    </button>
+    <button class="button" id="pixelknightbutton" onclick="changeButton(this)">
+        Pixel Knight
+    </button>
+    <button class="button" id="fatesreprisebutton" onclick="changeButton(this)">
+        Fate's Reprise
+    </button>
+    <button class="button" id="darkandlightbutton" onclick="changeButton(this)">
+        Dark and Light
+    </button>
+    <br>
+    <button class="button" style="margin-left: 25px; margin-top: 5px;" id="colorsynthesizerbutton" onclick="changeButton(this)">
+        Color Synthesizer
+    </button>
+    <button class="button" id="documentencryptorbutton" onclick="changeButton(this)">
+        Document Encryptor
+    </button>
+    <button class="button" id="fileencryptorbutton" onclick="changeButton(this)">
+        File Encryptor
+    </button>
+    <button class="button" id="trafficdirectorbutton" onclick="changeButton(this)">
+        Traffic Director
+    </button>
+    <button class="button" style="margin-bottom: 5px" id="spaceshooterbutton" onclick="changeButton(this)">
+        Space Shooter
+    </button>
+
+    <br>
+
+    <span id="webpage">
+    <script src="https://gist.github.com/Inoculates/616bce104cb0e0473d01.js"></script>
+    </span>
+    <span id="fatesreprisepage">
+    <script src="https://gist.github.com/Inoculates/e78bebd48fafd45f3c52.js"></script>
+    </span>
+</h3>
+
+<script>
+    if (activeSource != 0)
+        document.getElementById("webpage").innerHTML = "";
+    if (activeSource != 1)
+        document.getElementById("fatesreprisepage").innerHTML = "";
+
+    if (activeSource == 0)
+        document.getElementById("homepagebutton").className = "activebutton";
+    if (activeSource == 1)
+        document.getElementById("fatesreprisebutton").className = "activebutton";
+
+    function changeButton(button) {
+        if (button.id == "homepagebutton") {
+            sessionStorage.setItem("ActiveSource", 0);
+            location.reload();
+        }
+        else if (button.id == "fatesreprisebutton") {
+            sessionStorage.setItem("ActiveSource", 1);
+            location.reload();
+        }
+    }
+</script>
+
+<p>
+    Here is a link to my github project for this Website:
+    <img src="Assets/github.png" alt="Github Link" style="width:60px; height:60px; border:0" align="middle"
+         usemap="#githubmap">
+
+    <map name="githubmap">
+        <area shape="circle" coords="60 60 60" style="border: none; outline-style: none;"
+              href="https://github.com/Inoculates/Dark-and-Light">
+    </map>
+</p>
+
+<hr>
+
+<h6 id="Download Link">
+    Source Code Download
+    <a href="Assets/DarkLight.zip" target="_blank">
+        <img src="Assets/download.svg" alt="Download Link" style="width:40px; height:40px; border:0; margin: 0"
+             align="middle">
+    </a>
+</h6>
+
+<p>
+    The download link for the source code of this website is above!
+    <br>
+</p>
+
+<footer>
+    Copyright © Akshay Subramaniam
+</footer>
+</body>
+</html>

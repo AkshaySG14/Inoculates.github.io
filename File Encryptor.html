@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inoculates Applications</title>
+    <link rel="stylesheet" type="text/css" href="Main.css">
+</head>
+
+<body>
+
+<nav id="Summary">
+    <ul id="menu">
+        <li>
+            <a href="Home Page.html" onclick="resetActive()">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="Memori.html" onclick="resetActive()">
+                Memori
+            </a>
+        </li>
+        <li>
+            <a href="Magnetic Motion Demo.html" onclick="resetActive()">
+                Magnetic Motion Demo
+            </a>
+        </li>
+        <li>
+            <a href="Pixel Knight.html" onclick="resetActive()">
+                Pixel Knight
+            </a>
+        </li>
+        <li>
+            <a href="Dark and Light.html" onclick="resetActive()">
+                Dark and Light
+            </a>
+        </li>
+        <li>
+            <a href="Fates Reprise.html" onclick="resetActive()">
+                Fate's Reprise
+            </a>
+        </li>
+        <li>
+            <a href="Color Synthesizer.html" onclick="resetActive()">
+                Color Synthesizer
+            </a>
+        </li>
+        <li>
+            <a href="Document Encryptor.html" onclick="resetActive()">
+                Document Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="File Encryptor.html" class="active" onclick="resetActive()">
+                File Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="Traffic Director.html" onclick="resetActive()">
+                Traffic Director
+            </a>
+        </li>
+        <li>
+            <a href="Space Shooter.html" onclick="resetActive()">
+                Space Shooter
+            </a>
+        </li>
+    </ul>
+    <script>
+        function resetActive() {
+            sessionStorage.setItem("ActiveSource", 0);
+        }
+    </script>
+</nav>
+
+<div id="navbarVert">
+    <ul id="navigation">
+        <li>
+            <a href="#Summary">Description of File Encryptor</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Screenshots">Screenshots of Application</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Code">Source Code of File Encryptor</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Download Link">App Download</a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    var activeSource = -1;
+    if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.getItem("ActiveSource") !== null)
+            activeSource = sessionStorage.getItem("ActiveSource");
+        else {
+            activeSource = 0;
+            sessionStorage.setItem("ActiveSource", activeSource);
+        }
+    }
+</script>
+
+<h1>
+    File Encryptor
+</h1>
+<p>
+    File Encryptor is another mac based app that can encrypt ANY file type. The program is able to encrypt a file
+    through one of three ciphers, all block ciphers. The three block cipher modes are: Electronic Codebook, Cipher
+    Block Chaining, and Counter. These ciphers operate directly on the file's memory contents, meaning the bytes
+    themselves are encrypted. Thus, this program will completely transform the file, making it unreadable once
+    encrypted.
+    <br><br>
+    The application was created in Xcode, and written in C++ as a way to familiarize myself with digital cryptology.
+    Though written completely in C++, the code is built on the SFML framework, which provided the necessary functions
+    for the code to work. Regardless, anyone versed in C++ would be able to easily examine the code.
+    <br><br>
+    To launch the application, a mac with the latest OS is required. The application itself can be launched immediately
+    once downloaded. It requires a mouse/trackpad and a keyboard to operate. The user should be able to easily navigate
+    through the UI to interact with the application. Note that the full file path of the document should be entered. For
+    example: /Users/akshaysubramaniam/Documents/Example.png.
+    <br><br>
+    Note that the program WILL make the file unreadable once encrypted, meaning the user cannot access it properly.
+    However, once decrypted, the file will be interactable with as normal.
+    <br><br>
+    NOTE: This application can only be downloaded on Mac Operating Systems.
+<hr>
+
+<h2 id="Screenshots" style="margin-top: 0">
+    Screenshots of the application
+    <br>
+    <img src="Assets/fileencryptorscreen1.png" alt="File Encryptor Screenshot One" border="1" style="width: 400px; height: 300px;">
+    <img src="Assets/fileencryptorscreen2.png" alt="File Encryptor Screenshot Two" border="1" style="width: 400px; height: 300px;">
+    <img src="Assets/fileencryptorscreen3.png" alt="File Encryptor Screenshot Three" border="1" style="width: 400px; height: 300px;">
+    <img src="Assets/fileencryptorscreen4.png" alt="File Encryptor Screenshot Four" border="1" style="width: 400px; height: 300px;">
+    <img src="Assets/fileencryptorscreen5.png" alt="File Encryptor Screenshot Five" border="1" style="width: 400px; height: 300px;">
+    <img src="Assets/fileencryptorscreen6.png" alt="File Encryptor Screenshot Six" border="1" style="width: 400px; height: 300px;">
+</h2>
+
+<hr>
+
+<h3 id="Code" style="margin-top: 0">
+    How and Why File Encryptor Was Made
+</h3>
+
+<p>
+    There's truly not much to say about File Encryptor, as it is simply a follow-up to Document Encryptor. As Document
+    Encryptor was only capable of encrypting text files, I sought to create an application that could encrypt anything,
+    and more importantly do so using modern encryption methods. After a few days of studying digital encryption, I
+    created File Encryptor, which has the capabilities of encrypting any file with the modern, albeit basic methods of
+    encryption.
+    <br><br>
+    File Encryptor is entirely written in C++, and only differs from the basic language in that it uses the SFML
+    framework for rendering purposes. However, the code can very easily be understood by someone versed in C++, and
+    simply uses basic logic for the majority of its functions.
+    <br>
+</p>
+
+<h4 style="margin-top: 0">
+    Here's some of the source code for File Encryptor
+    <br>
+
+    <button class="button" style="margin-left: 115px;" id="RunManager.cpp" onclick="changeButton(this)">
+        RunManager.cpp
+    </button>
+    <button class="button" id="RunManager.h" onclick="changeButton(this)">
+        RunManager.h
+    </button>
+    <button class="button" id="Encryptor.cpp" onclick="changeButton(this)">
+        Encryptor.cpp
+    </button>
+    <button class="button" id="Encryptor.h" onclick="changeButton(this)">
+        Encryptor.h
+    </button>
+    <button class="button" id="Decryptor.cpp" onclick="changeButton(this)">
+        Decryptor.cpp
+    </button>
+    <br>
+    <button class="button"  style="margin-top: 5px;" id="Decryptor.h" onclick="changeButton(this)">
+        Decryptor.h
+    </button>
+    <button class="button" id="EncryptionHandler.cpp" onclick="changeButton(this)">
+        EncryptionHandler.cpp
+    </button>
+    <button class="button" id="EncryptionHandler.h" onclick="changeButton(this)">
+        EncryptionHandler.h
+    </button>
+    <button class="button" id="DecryptionHandler.cpp" onclick="changeButton(this)">
+        DecryptionHandler.cpp
+    </button>
+    <button class="button" id="DecryptionHandler.h" onclick="changeButton(this)">
+        DecryptionHandler.h
+    </button>
+    <br><br>
+
+    <span id="runmanagercppsource">
+<script src="https://gist.github.com/Inoculates/13457c68fcc38b90f812.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 0)
+            document.getElementById("runmanagercppsource").innerHTML = "";
+        else
+            document.getElementById("RunManager.cpp").className = "activebutton";
+    </script>
+
+    <span id="runmanagerhsource">
+<script src="https://gist.github.com/Inoculates/a83d52b582553f77a178.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 1)
+            document.getElementById("runmanagerhsource").innerHTML = "";
+        else
+            document.getElementById("RunManager.h").className = "activebutton";
+    </script>
+
+        <span id="encryptorcppsource">
+<script src="https://gist.github.com/Inoculates/01dd60ca895dd406c643.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 2)
+            document.getElementById("encryptorcppsource").innerHTML = "";
+        else
+            document.getElementById("Encryptor.cpp").className = "activebutton";
+    </script>
+
+    <span id="encryptorhsource">
+<script src="https://gist.github.com/Inoculates/4a0dd0aebe9becdde81d.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 3)
+            document.getElementById("encryptorhsource").innerHTML = "";
+        else
+            document.getElementById("Encryptor.h").className = "activebutton";
+    </script>
+
+        <span id="decryptorcppsource">
+<script src="https://gist.github.com/Inoculates/f362ba4dd745387fa78e.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 4)
+            document.getElementById("decryptorcppsource").innerHTML = "";
+        else
+            document.getElementById("Decryptor.cpp").className = "activebutton";
+    </script>
+
+    <span id="decryptorhsource">
+<script src="https://gist.github.com/Inoculates/6cbd6a5963ae60d8003a.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 5)
+            document.getElementById("decryptorhsource").innerHTML = "";
+        else
+            document.getElementById("Decryptor.h").className = "activebutton";
+    </script>
+
+        <span id="encryptionhandlercppsource">
+<script src="https://gist.github.com/Inoculates/82a5b9197bec4b8151a4.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 6)
+            document.getElementById("encryptionhandlercppsource").innerHTML = "";
+        else
+            document.getElementById("EncryptionHandler.cpp").className = "activebutton";
+    </script>
+
+    <span id="encryptionhandlerhsource">
+<script src="https://gist.github.com/Inoculates/c0dfc4cc9dfb81122a90.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 7)
+            document.getElementById("encryptionhandlerhsource").innerHTML = "";
+        else
+            document.getElementById("EncryptionHandler.h").className = "activebutton";
+    </script>
+
+        <span id="decryptionhandlercppsource">
+<script src="https://gist.github.com/Inoculates/2a833b553513d19b89cc.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 8)
+            document.getElementById("decryptionhandlercppsource").innerHTML = "";
+        else
+            document.getElementById("DecryptionHandler.cpp").className = "activebutton";
+    </script>
+
+            <span id="decryptionhandlerhsource">
+<script src="https://gist.github.com/Inoculates/1d6d92a9b7e820bcf309.js"></script>
+            </span>
+
+    <script>
+        if (activeSource != 9)
+            document.getElementById("decryptionhandlerhsource").innerHTML = "";
+        else
+            document.getElementById("DecryptionHandler.h").className = "activebutton";
+    </script>
+</h4>
+
+<script>
+    function changeButton(button) {
+        if (button.id == "RunManager.cpp") {
+            sessionStorage.setItem("ActiveSource", 0);
+            location.reload();
+        }
+        else if (button.id == "RunManager.h") {
+            sessionStorage.setItem("ActiveSource", 1);
+            location.reload();
+        }
+        else if (button.id == "Encryptor.cpp") {
+            sessionStorage.setItem("ActiveSource", 2);
+            location.reload();
+        }
+        else if (button.id == "Encryptor.h") {
+            sessionStorage.setItem("ActiveSource", 3);
+            location.reload();
+        }
+        else if (button.id == "Decryptor.cpp") {
+            sessionStorage.setItem("ActiveSource", 4);
+            location.reload();
+        }
+        else if (button.id == "Decryptor.h") {
+            sessionStorage.setItem("ActiveSource", 5);
+            location.reload();
+        }
+        else if (button.id == "EncryptionHandler.cpp") {
+            sessionStorage.setItem("ActiveSource", 6);
+            location.reload();
+        }
+        else if (button.id == "EncryptionHandler.h") {
+            sessionStorage.setItem("ActiveSource", 7);
+            location.reload();
+        }
+        else if (button.id == "DecryptionHandler.cpp") {
+            sessionStorage.setItem("ActiveSource", 8);
+            location.reload();
+        }
+        else if (button.id == "DecryptionHandler.h") {
+            sessionStorage.setItem("ActiveSource", 9);
+            location.reload();
+        }
+    }
+</script>
+
+<p>
+    Here is a link to my github project for File Encryptor:
+    <img src="Assets/github.png" alt="Github Link" style="width:60px; height:60px; border:0" align="middle"
+         usemap="#githubmap">
+
+    <map name="githubmap">
+        <area shape="circle" coords="60 60 60" style="border: none; outline-style: none;"
+              href="https://github.com/Inoculates/File-Encryptor">
+    </map>
+</p>
+
+<hr>
+
+<h6 id="Download Link" style="margin-top: 0">
+    Application Download
+    <a href="Assets/FileEncryptor.zip" target="_blank">
+        <img src="Assets/download.svg" alt="Download Link" style="width:40px; height:40px; border:0" align="middle">
+    </a>
+</h6>
+
+<p>
+    Here is the download link for the application. Enjoy!
+    <br>
+
+</p>
+
+<footer>
+    Copyright © Akshay Subramaniam
+</footer>
+</body>
+</html>

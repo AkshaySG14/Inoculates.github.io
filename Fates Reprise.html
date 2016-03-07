@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inoculates Applications</title>
+    <link rel="stylesheet" type="text/css" href="Main.css">
+</head>
+
+<body>
+
+<nav id="Summary">
+    <ul id="menu">
+        <li>
+            <a href="Home Page.html" onclick="resetActive()">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="Memori.html" onclick="resetActive()">
+                Memori
+            </a>
+        </li>
+        <li>
+            <a href="Magnetic Motion Demo.html" onclick="resetActive()">
+                Magnetic Motion Demo
+            </a>
+        </li>
+        <li>
+            <a href="Pixel Knight.html" onclick="resetActive()">
+                Pixel Knight
+            </a>
+        </li>
+        <li>
+            <a href="Dark and Light.html" onclick="resetActive()">
+                Dark and Light
+            </a>
+        </li>
+        <li>
+            <a href="Fates Reprise.html" class="active" onclick="resetActive()">
+                Fate's Reprise
+            </a>
+        </li>
+        <li>
+            <a href="Color Synthesizer.html" onclick="resetActive()">
+                Color Synthesizer
+            </a>
+        </li>
+        <li>
+            <a href="Document Encryptor.html" onclick="resetActive()">
+                Document Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="File Encryptor.html" onclick="resetActive()">
+                File Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="Traffic Director.html" onclick="resetActive()">
+                Traffic Director
+            </a>
+        </li>
+        <li>
+            <a href="Space Shooter.html" onclick="resetActive()">
+                Space Shooter
+            </a>
+        </li>
+    </ul>
+    <script>
+        function resetActive() {
+            sessionStorage.setItem("ActiveSource", 0);
+        }
+    </script>
+</nav>
+
+<div id="navbarVert">
+    <ul id="navigation">
+        <li>
+            <a href="#Summary">Description of Fate's Reprise</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Screenshots">Screenshots of Game</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Code">Coding of Fate's Reprise</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Download Link">Jar Download</a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    var activeSource = -1;
+    if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.getItem("ActiveSource") !== null)
+            activeSource = sessionStorage.getItem("ActiveSource");
+        else {
+            activeSource = 0;
+            sessionStorage.setItem("ActiveSource", activeSource);
+        }
+    }
+</script>
+
+<h1>
+    Fate's Reprise
+</h1>
+<p>
+    Fate's Reprise is another desktop game, and is heavily inspired by the handheld game Link's Awakening.
+    Fate's Reprise is a top-down game where the player controls a single character named Daur.
+    The goal of the game is to rescue eight gods who are trapped in formidable dungeons.
+    Fate's Reprise makes use of fluid combat, puzzle-solving, and interesting dialogue to create an intriguing and
+    deep game that users will find both challenging and interesting. By battling with both sword and spells,
+    the game offers a variety of ways to tackle enemies and bosses, as well as numerous difficult puzzles.
+    <br><br>
+    As a computer game, Fate's Reprise is operated through the keyboard exclusively. The basic movement controls are
+    the WASD scheme. Press F to talk to someone or activate a button/event.
+    Press J, K, or L to use the items in the game.
+    Press Esc to go to the pause menu, where the user may equip items using the WASD and JKL keys.
+    Pressing the Esc key when a shop windows is open will close it. Additionally, by pressing the secondary button
+    (X) on the pause screen, the user may go to a secondary screen, where the user can view his/her quest items and
+    save/quit the game. Pressing the X button on the normal screen will bring up the map of the overworld/dungeons.
+    <br><br>
+    For anyone wishing to play the game itself, a jar is available for download, which allows any OS to easily launch
+    and run the game. It is located in the Jar Folder in the main folder. Simply double click and play. If for whatever
+    reason this doesn't work, the jar file can be launched via terminal/command line. However, the jar file name must
+    be changed to something without a space and apostrophe before being launched via terminal/command line.
+    <br><br>
+    NOTE: The game is as of yet unfinished. However, the game up until the first dungeon may be completed.
+</p>
+
+<hr>
+
+<h2 id="Screenshots" style="margin-top: 0">
+    Screenshots of the game
+    <br>
+    <img src="Assets/fatesreprisescreen1.png" alt="Fate's Reprise Screenshot One" style="width: 400px; height: 300px;">
+    <img src="Assets/fatesreprisescreen2.png" alt="Fate's Reprise Screenshot Two" style="width: 400px; height: 300px;">
+    <img src="Assets/fatesreprisescreen3.png" alt="Fate's Reprise Screenshot Three" style="width: 400px; height: 300px;">
+    <img src="Assets/fatesreprisescreen4.png" alt="Fate's Reprise Screenshot Four" style="width: 400px; height: 300px;">
+    <img src="Assets/fatesreprisescreen5.png" alt="Fate's Reprise Screenshot Five" style="width: 400px; height: 300px;">
+    <img src="Assets/fatesreprisescreen6.png" alt="Fate's Reprise Screenshot Six" style="width: 400px; height: 300px;">
+    <img src="Assets/fatesreprisescreen7.png" alt="Fate's Reprise Screenshot Seven" style="width: 400px; height: 300px;">
+    <img src="Assets/fatesreprisescreen8.png" alt="Fate's Reprise Screenshot Eight" style="width: 400px; height: 300px;">
+    <img src="Assets/fatesreprisescreen9.png" alt="Fate's Reprise Screenshot Nine" style="width: 400px; height: 300px;">
+    <img src="Assets/fatesreprisescreen10.png" alt="Fate's Reprise Screenshot Ten" style="width: 400px; height: 300px;">
+</h2>
+
+<hr>
+
+<h3 id="Code" style="margin-top: 0">
+    How and Why Fate's Reprise Was Made
+</h3>
+
+<p>
+    Initially, Fate's Reprise was made as an attempt to expand upon my knowledge of Java after completing my first desktop game,
+    Pixel Knight. As I felt Pixel Knight to be too simple and unpolished for my liking, I sought to use my acquired
+    knowledge to create a polished and aesthetically pleasing game. To date, Fate's Reprise is the most complicated
+    coding project I have attempted, and it shows in the numerous, varied aspects of the game.
+    <br><br>
+    Language-wise, Fate's Reprise is completely written in Java, and is built upon the Libgdx Java engine. However,
+    Libgdx is mostly used for the rendering of the sprites and the background, and thus is largely unnecessary to
+    understand the code of this game. The game can be understood with a decent understanding of Java, and can be read
+    and used as a learning tool.
+    <br>
+</p>
+
+<h4 style="margin-top: 0">
+    Here's some of the source code for Fate's Reprise
+
+    <br>
+
+    <button class="button" id="Daur" onclick="changeButton(this)">
+        Daur.java
+    </button>
+    <button class="button" id="GameScreen" onclick="changeButton(this)">
+        GameScreen.java
+    </button>
+    <button class="button" id="Storage" onclick="changeButton(this)">
+        Storage.java
+    </button>
+    <button class="button" id="World" onclick="changeButton(this)">
+        World.java
+    </button>
+    <button class="button" id="ConcussiveShot" onclick="changeButton(this)">
+        ConcussiveShot.java
+    </button>
+    <button class="button" id="Dialogue" onclick="changeButton(this)">
+        Dialogue.java
+    </button>
+    <br>
+    <button class="button" style="margin-left: 25px; margin-top: 5px;" id="BasicSword" onclick="changeButton(this)">
+        BasicSword.java
+    </button>
+    <button class="button" id="StaticVillager" onclick="changeButton(this)">
+        StaticVillager.java
+    </button>
+    <button class="button" id="Beetle" onclick="changeButton(this)">
+        Beetle.java
+    </button>
+    <button class="button" id="Wizard" onclick="changeButton(this)">
+        Wizard.java
+    </button>
+    <button class="button" style="margin-bottom: 5px" id="SlimeKing" onclick="changeButton(this)">
+        SlimeKing.java
+    </button>
+
+    <br>
+
+    <span id="daursource">
+<script src="https://gist.github.com/Inoculates/325d48a25f836ab75428.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 0)
+            document.getElementById("daursource").innerHTML = "";
+        else
+            document.getElementById("Daur").className = "activebutton";
+    </script>
+
+    <span id="gamescreensource">
+<script src="https://gist.github.com/Inoculates/02bc0fefcaaad9836350.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 1)
+            document.getElementById("gamescreensource").innerHTML = "";
+        else
+            document.getElementById("GameScreen").className = "activebutton";
+    </script>
+
+        <span id="storagesource">
+<script src="https://gist.github.com/Inoculates/48857e83df15467614ca.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 2)
+            document.getElementById("storagesource").innerHTML = "";
+        else
+            document.getElementById("Storage").className = "activebutton";
+    </script>
+
+    <span id="worldsource">
+<script src="https://gist.github.com/Inoculates/087df0f03eab27aef1a7.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 3)
+            document.getElementById("worldsource").innerHTML = "";
+        else
+            document.getElementById("World").className = "activebutton";
+    </script>
+
+        <span id="concussiveshotsource">
+<script src="https://gist.github.com/Inoculates/c73d73f2d193064960e3.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 4)
+            document.getElementById("concussiveshotsource").innerHTML = "";
+        else
+            document.getElementById("ConcussiveShot").className = "activebutton";
+    </script>
+
+    <span id="dialoguesource">
+<script src="https://gist.github.com/Inoculates/96b0d2b345b2f62940a4.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 5)
+            document.getElementById("dialoguesource").innerHTML = "";
+        else
+            document.getElementById("Dialogue").className = "activebutton";
+    </script>
+
+        <span id="basicswordsource">
+<script src="https://gist.github.com/Inoculates/a0b68af11aa631ae977b.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 6)
+            document.getElementById("basicswordsource").innerHTML = "";
+        else
+            document.getElementById("BasicSword").className = "activebutton";
+    </script>
+
+    <span id="staticvillagersource">
+<script src="https://gist.github.com/Inoculates/829944f8faa7e13b78c3.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 7)
+            document.getElementById("staticvillagersource").innerHTML = "";
+        else
+            document.getElementById("StaticVillager").className = "activebutton";
+    </script>
+
+        <span id="beetlesource">
+<script src="https://gist.github.com/Inoculates/8681d817439832c23f52.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 8)
+            document.getElementById("beetlesource").innerHTML = "";
+        else
+            document.getElementById("Beetle").className = "activebutton";
+    </script>
+
+    <span id="wizardsource">
+<script src="https://gist.github.com/Inoculates/32ae8bf8dbcb10e80039.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 9)
+            document.getElementById("wizardsource").innerHTML = "";
+        else
+            document.getElementById("Wizard").className = "activebutton";
+    </script>
+
+        <span id="slimekingsource">
+<script src="https://gist.github.com/Inoculates/756e788e053ecb148c7f.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 10)
+            document.getElementById("slimekingsource").innerHTML = "";
+        else
+            document.getElementById("SlimeKing").className = "activebutton";
+    </script>
+</h4>
+
+<script>
+    function changeButton(button) {
+        if (button.id == "Daur") {
+            sessionStorage.setItem("ActiveSource", 0);
+            location.reload();
+        }
+        else if (button.id == "GameScreen") {
+            sessionStorage.setItem("ActiveSource", 1);
+            location.reload();
+        }
+        else if (button.id == "Storage") {
+            sessionStorage.setItem("ActiveSource", 2);
+            location.reload();
+        }
+        else if (button.id == "World") {
+            sessionStorage.setItem("ActiveSource", 3);
+            location.reload();
+        }
+        else if (button.id == "ConcussiveShot") {
+            sessionStorage.setItem("ActiveSource", 4);
+            location.reload();
+        }
+        else if (button.id == "Dialogue") {
+            sessionStorage.setItem("ActiveSource", 5);
+            location.reload();
+        }
+        else if (button.id == "BasicSword") {
+            sessionStorage.setItem("ActiveSource", 6);
+            location.reload();
+        }
+        else if (button.id == "StaticVillager") {
+            sessionStorage.setItem("ActiveSource", 7);
+            location.reload();
+        }
+        else if (button.id == "Beetle") {
+            sessionStorage.setItem("ActiveSource", 8);
+            location.reload();
+        }
+        else if (button.id == "Wizard") {
+            sessionStorage.setItem("ActiveSource", 9);
+            location.reload();
+        }
+        else if (button.id == "SlimeKing") {
+            sessionStorage.setItem("ActiveSource", 10);
+            location.reload();
+        }
+    }
+</script>
+
+<p>
+    Here is a link to my github project for Fate's Reprise:
+    <img src="Assets/github.png" alt="Github Link" style="width:60px; height:60px; border:0" align="middle"
+         usemap="#githubmap">
+
+    <map name="githubmap">
+        <area shape="circle" coords="60 60 60" style="border: none; outline-style: none;"
+              href="https://github.com/Inoculates/Fates-Reprise">
+    </map>
+</p>
+
+<hr>
+
+<h6 id="Download Link" style="margin-top: 0">
+    Jar Download
+    <a href="Assets/FatesReprise.jar" target="_blank">
+        <img src="Assets/download.svg" alt="Download Link" style="width:40px; height:40px; border:0" align="middle">
+    </a>
+</h6>
+
+<p>
+    Here is the download link for the jar. Enjoy!
+    <br>
+
+</p>
+
+<footer>
+    Copyright © Akshay Subramaniam
+</footer>
+</body>
+</html>

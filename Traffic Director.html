@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inoculates Applications</title>
+    <link rel="stylesheet" type="text/css" href="Main.css">
+</head>
+
+<body>
+
+<nav id="Summary">
+    <ul id="menu">
+        <li>
+            <a href="Home Page.html" onclick="resetActive()">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="Memori.html" onclick="resetActive()">
+                Memori
+            </a>
+        </li>
+        <li>
+            <a href="Magnetic Motion Demo.html" onclick="resetActive()">
+                Magnetic Motion Demo
+            </a>
+        </li>
+        <li>
+            <a href="Pixel Knight.html" onclick="resetActive()">
+                Pixel Knight
+            </a>
+        </li>
+        <li>
+            <a href="Dark and Light.html" onclick="resetActive()">
+                Dark and Light
+            </a>
+        </li>
+        <li>
+            <a href="Fates Reprise.html" onclick="resetActive()">
+                Fate's Reprise
+            </a>
+        </li>
+        <li>
+            <a href="Color Synthesizer.html" onclick="resetActive()">
+                Color Synthesizer
+            </a>
+        </li>
+        <li>
+            <a href="Document Encryptor.html" onclick="resetActive()">
+                Document Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="File Encryptor.html" onclick="resetActive()">
+                File Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="Traffic Director.html" class="active" onclick="resetActive()">
+                Traffic Director
+            </a>
+        </li>
+        <li>
+            <a href="Space Shooter.html" onclick="resetActive()">
+                Space Shooter
+            </a>
+        </li>
+    </ul>
+    <script>
+        function resetActive() {
+            sessionStorage.setItem("ActiveSource", 0);
+        }
+    </script>
+</nav>
+
+<div id="navbarVert">
+    <ul id="navigation">
+        <li>
+            <a href="#Summary">Description of Traffic Director</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Screenshots">Screenshots of Game</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Code">Source Code of Traffic Director</a>
+        </li>
+        <li>
+            <br>
+        </li>
+    </ul>
+</div>
+
+<script>
+    var activeSource = -1;
+    if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.getItem("ActiveSource") !== null)
+            activeSource = sessionStorage.getItem("ActiveSource");
+        else {
+            activeSource = 0;
+            sessionStorage.setItem("ActiveSource", activeSource);
+        }
+    }
+</script>
+
+<h1>
+    Traffic Director
+</h1>
+<p>
+    Traffic director is a very simplistic game made in python. The goal of traffic director is to direct traffic on
+    three intersections, and ensure that cars get to their destination while not colliding and while not staying on the
+    road too long. The game is operated via mouse clicks exclusively. The only thing the user has to do is to change
+    the traffic lights on the roads from red to green and vice-versa. A red light stops all cars at the intersection,
+    while a green light lets them pass.
+    <br><br>
+    Traffic director was made in Python, and uses the framework pygame to draw the sprites on the screen. The code is
+    extremely easy to digest, and is prime learning material for those new to the script.
+<hr>
+
+<h2 id="Screenshots" style="margin-top: 0">
+    Screenshots of the game
+    <br>
+    <img src="Assets/trafficdirectorscreen1.png" alt="Traffic Director Screenshot One" style="width: 400px; height: 320px;">
+    <img src="Assets/trafficdirectorscreen2.png" alt="Traffic Director Screenshot Two" style="width: 400px; height: 320px;">
+    <img src="Assets/trafficdirectorscreen3.png" alt="Traffic Director Screenshot Three" style="width: 400px; height: 320px;">
+    <img src="Assets/trafficdirectorscreen4.png" alt="Traffic Director Screenshot Four" style="width: 400px; height: 320px;">
+    <img src="Assets/trafficdirectorscreen5.png" alt="Traffic Director Screenshot Five" style="width: 400px; height: 320px;">
+    <img src="Assets/trafficdirectorscreen6.png" alt="Traffic Director Screenshot Six" style="width: 400px; height: 320px;">
+    <img src="Assets/trafficdirectorscreen7.png" alt="Traffic Director Screenshot Seven" style="width: 400px; height: 320px;">
+    <img src="Assets/trafficdirectorscreen8.png" alt="Traffic Director Screenshot Eight" style="width: 400px; height: 320px;">
+</h2>
+
+<hr>
+
+<h3 id="Code" style="margin-top: 0">
+    How and Why Traffic Director Was Made
+</h3>
+
+<p>
+    Before Traffic Director I had never thought of making an application in Python, or even learning the language
+    (mostly due to my irrational dislike of the language for its apparent simplicity). Eventually, I got over my
+    prejudices and decided to learn Python and make a Python-based game. That game was of course Traffic Director, and
+    utilizing the PyGame, a Python multimedia library, I successfully wrote the game both quickly and
+    thoroughly. Naturally, my experience of developing on Python ameliorated my opinion of it, and I now feel that
+    Python is just as good of a programming language as C++ or Java (though each has its time and place).
+    <br><br>
+    Traffic Director is written in easily digestible Python. It uses the PyGame multimedia library for rendering
+    purposes, and as such a basic understanding of PyGame is needed to understand the entirety of the source code, but
+    largely irrelevant for assessing the fundamentals of the code.
+    <br>
+</p>
+
+<h4 style="margin-top: 0">
+    Here's the source code for Traffic Director
+    <br>
+
+    <button class="button" id="Director" onclick="changeButton(this)">
+        Director.py
+    </button>
+    <button class="button" id="CarHandler" onclick="changeButton(this)">
+        CarHandler.py
+    </button>
+    <button class="button" id="GraphicsHelper" onclick="changeButton(this)">
+        GraphicsHelper.py
+    </button>
+    <br><br>
+
+    <span id="directorsource">
+<script src="https://gist.github.com/Inoculates/d956d5c0aeb19eba8850.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 0)
+            document.getElementById("directorsource").innerHTML = "";
+        else
+            document.getElementById("Director").className = "activebutton";
+    </script>
+
+    <span id="carhandlersource">
+<script src="https://gist.github.com/Inoculates/8e610717359b89ea698a.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 1)
+            document.getElementById("carhandlersource").innerHTML = "";
+        else
+            document.getElementById("CarHandler").className = "activebutton";
+    </script>
+
+        <span id="graphicshelpersource">
+<script src="https://gist.github.com/Inoculates/ef1495283e13ec99e281.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 2)
+            document.getElementById("graphicshelpersource").innerHTML = "";
+        else
+            document.getElementById("GraphicsHelper").className = "activebutton";
+    </script>
+</h4>
+
+<script>
+    function changeButton(button) {
+        if (button.id == "Director") {
+            sessionStorage.setItem("ActiveSource", 0);
+            location.reload();
+        }
+        else if (button.id == "CarHandler") {
+            sessionStorage.setItem("ActiveSource", 1);
+            location.reload();
+        }
+        else if (button.id == "GraphicsHelper") {
+            sessionStorage.setItem("ActiveSource", 2);
+            location.reload();
+        }
+    }
+</script>
+
+<p>
+    Here is a link to my github project for Traffic Director:
+    <img src="Assets/github.png" alt="Github Link" style="width:60px; height:60px; border:0" align="middle"
+         usemap="#githubmap">
+
+    <map name="githubmap">
+        <area shape="circle" coords="60 60 60" style="border: none; outline-style: none;"
+              href="https://github.com/Inoculates/Traffic-Director">
+    </map>
+</p>
+
+<hr>
+
+<footer>
+    Copyright © Akshay Subramaniam
+</footer>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inoculates Applications</title>
+    <link rel="stylesheet" type="text/css" href="Main.css">
+</head>
+
+<body>
+
+<nav id="Summary">
+    <ul id="menu">
+        <li>
+            <a href="Home Page.html" onclick="resetActive()">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="Memori.html" class="active" onclick="resetActive()">
+                Memori
+            </a>
+        </li>
+        <li>
+            <a href="Magnetic Motion Demo.html" onclick="resetActive()">
+                Magnetic Motion Demo
+            </a>
+        </li>
+        <li>
+            <a href="Pixel Knight.html" onclick="resetActive()">
+                Pixel Knight
+            </a>
+        </li>
+        <li>
+            <a href="Dark and Light.html" onclick="resetActive()">
+                Dark and Light
+            </a>
+        </li>
+        <li>
+            <a href="Fates Reprise.html" onclick="resetActive()">
+                Fate's Reprise
+            </a>
+        </li>
+        <li>
+            <a href="Color Synthesizer.html" onclick="resetActive()">
+                Color Synthesizer
+            </a>
+        </li>
+        <li>
+            <a href="Document Encryptor.html" onclick="resetActive()">
+                Document Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="File Encryptor.html" onclick="resetActive()">
+                File Encryptor
+            </a>
+        </li>
+        <li>
+            <a href="Traffic Director.html" onclick="resetActive()">
+                Traffic Director
+            </a>
+        </li>
+        <li>
+            <a href="Space Shooter.html" onclick="resetActive()">
+                Space Shooter
+            </a>
+        </li>
+    </ul>
+    <script>
+        function resetActive() {
+            sessionStorage.setItem("ActiveSource", 0);
+        }
+    </script>
+</nav>
+
+<div id="navbarVert">
+    <ul id="navigation">
+        <li>
+            <a href="#Summary">Description of Memori</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Screenshots">Screenshots of Game</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Code">Coding of Memori</a>
+        </li>
+        <li>
+            <br>
+        </li>
+        <li>
+            <a href="#Download Link">Play Store Link</a>
+        </li>
+    </ul>
+</div>
+
+<script>
+    var activeSource = -1;
+    if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.getItem("ActiveSource") !== null)
+            activeSource = sessionStorage.getItem("ActiveSource");
+        else {
+            activeSource = 0;
+            sessionStorage.setItem("ActiveSource", activeSource);
+        }
+    }
+</script>
+
+<h1>
+    Memori
+</h1>
+<p>
+    Memori is a simple memory game involving patterns. Follow the circles was a game developed for android, and consists of players
+    memorizing and then repeating randomly selected patterns of circles. The game itself was developed on android studio,
+    and uses no game engine to support itself. Thus, the code may be a little verbose. Nevertheless, the code does
+    function and should provide for a learning experience for aspiring android developers. To access the game itself,
+    the application Follow The Circles must be downloaded from the android store.
+    <br>
+    NOTE: The game is only available on android and can only be downloaded through the Google Play Store
+
+</p>
+
+<hr>
+
+<h2 id="Screenshots" style="margin-top: 0">
+    Screenshots of the game
+    <br>
+    <img src="Assets/memori1.png" alt="Memori Screenshot One" style="width: 240px; height: 400px;">
+    <img src="Assets/memori2.png" alt="Memori Screenshot Two" style="width: 240px; height: 400px;">
+    <img src="Assets/memori3.png" alt="Memori Screenshot Three" style="width: 240px; height: 400px;">
+    <br>
+    <img src="Assets/memori4.png" alt="Memori Screenshot Four" style="width: 240px; height: 400px;">
+    <img src="Assets/memori5.png" alt="Memori Screenshot Five" style="width: 240px; height: 400px;">
+    <img src="Assets/memori6.png" alt="Memori Screenshot Six" style="width: 240px; height: 400px;">
+</h2>
+
+<hr>
+
+<h3 id="Code" style="margin-top: 0">
+    How and Why Memori Was Made
+</h3>
+
+<p>
+    Memori was my first attempt at making a tangible application through my coding knowledge. Inspired by the power of
+    Java, I decided to attempt to hardcode an Android application. Thus I began developing Memori, and
+    created the game after a couple of months learning how to program with the Android APIs and Java in the context of
+    android application. After much hard work, I finally produced a finished product that could be published, and released
+    Memori on the Google Play Store.
+    <br><br>
+    Language-wise, Memori is coded with absolutely no engine or software assistance besides that of the Android APIs.
+    Thus, Memori can be read without any knowledge other than that of Java. However, the game does require basic
+    runtime knowledge such as locking and running threads, multithreading, and basic rendering concepts. However,
+    the code for Memori is noticeably untidy, as it was my first attempt at a legitimate, long-term application. That
+    being said, it should still be decently readable and didactic.
+    <br>
+</p>
+
+<h4 style="margin-top: 0">
+    Here's the source code for Memori
+
+    <br>
+
+    <button class="button" id="CircleGame" onclick="changeButton(this)">
+        CircleGame.java
+    </button>
+    <button class="button" id="CircleGameView" onclick="changeButton(this)">
+        CircleGameView.java
+    </button>
+    <button class="button" id="Initializer" onclick="changeButton(this)">
+        Initializer.java
+    </button>
+    <button class="button" id="LevelSelect" onclick="changeButton(this)">
+        LevelSelect.java
+    </button>
+    <button class="button" id="BitmapManager" onclick="changeButton(this)">
+        BitmapManager.java
+    </button>
+    <button class="button" id="SoundManager" onclick="changeButton(this)">
+        SoundManager.java
+    </button>
+    <br>
+    <br>
+
+    <span id="circlegamesource">
+<script src="https://gist.github.com/Inoculates/6db15eba8a6902df7601.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 0)
+            document.getElementById("circlegamesource").innerHTML = "";
+        else
+            document.getElementById("CircleGame").className = "activebutton";
+    </script>
+
+    <span id="circlegameviewsource">
+<script src="https://gist.github.com/Inoculates/34d6a3d48eda325b7108.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 1)
+            document.getElementById("circlegameviewsource").innerHTML = "";
+        else
+            document.getElementById("CircleGameView").className = "activebutton";
+    </script>
+
+        <span id="initializersource">
+<script src="https://gist.github.com/Inoculates/c2bcd80ea96581028a7c.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 2)
+            document.getElementById("initializersource").innerHTML = "";
+        else
+            document.getElementById("Initializer").className = "activebutton";
+    </script>
+
+    <span id="levelselectsource">
+<script src="https://gist.github.com/Inoculates/68ef4316f66e08e3f017.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 3)
+            document.getElementById("levelselectsource").innerHTML = "";
+        else
+            document.getElementById("LevelSelect").className = "activebutton";
+    </script>
+
+        <span id="bitmapmanagersource">
+<script src="https://gist.github.com/Inoculates/b4db79f7a15ec8f14f74.js"></script>
+        </span>
+
+    <script>
+        if (activeSource != 4)
+            document.getElementById("bitmapmanagersource").innerHTML = "";
+        else
+            document.getElementById("BitmapManager").className = "activebutton";
+    </script>
+
+    <span id="soundmanagersource">
+<script src="https://gist.github.com/Inoculates/eacedda1f6bb6e5d3eff.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 5)
+            document.getElementById("soundmanagersource").innerHTML = "";
+        else
+            document.getElementById("SoundManager").className = "activebutton";
+    </script>
+</h4>
+
+<script>
+    function changeButton(button) {
+        if (button.id == "CircleGame") {
+            sessionStorage.setItem("ActiveSource", 0);
+            location.reload();
+        }
+        else if (button.id == "CircleGameView") {
+            sessionStorage.setItem("ActiveSource", 1);
+            location.reload();
+        }
+        else if (button.id == "Initializer") {
+            sessionStorage.setItem("ActiveSource", 2);
+            location.reload();
+        }
+        else if (button.id == "LevelSelect") {
+            sessionStorage.setItem("ActiveSource", 3);
+            location.reload();
+        }
+        else if (button.id == "BitmapManager") {
+            sessionStorage.setItem("ActiveSource", 4);
+            location.reload();
+        }
+        else if (button.id == "SoundManager") {
+            sessionStorage.setItem("ActiveSource", 5);
+            location.reload();
+        }
+    }
+</script>
+
+<p>
+    Here is a link to my github project for Fate's Reprise:
+    <img src="Assets/github.png" alt="Github Link" style="width:60px; height:60px; border:0" align="middle"
+         usemap="#githubmap">
+
+    <map name="githubmap">
+        <area shape="circle" coords="60 60 60" style="border: none; outline-style: none;"
+              href="https://github.com/Inoculates/Circle-Game">
+    </map>
+</p>
+
+<hr>
+
+<h6 id="Download Link" style="margin-top: 0">
+    Google Play Store Link:
+    <a href="https://play.google.com/store/apps/details?id=memori.circle&hl=en">
+        <img src="Assets/download.svg" alt="Download Link" style="width:40px; height:40px; border:0" align="middle">
+    </a>
+</h6>
+
+<p>
+    Here is the link to the Google Play Store where Memori can be downloaded. Enjoy!
+    <br>
+
+</p>
+
+<footer>
+    Copyright © Akshay Subramaniam
+</footer>
+</body>
+</html>
