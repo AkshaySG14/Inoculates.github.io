@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<!-- This is the home page of the Website and it contains all the links to the other pages -->
+    <head>
     <meta charset="UTF-8">
+        <!-- This is the title of the Website -->
     <title>Inoculates Applications</title>
+        <!-- The universal CSS stylesheet for all pages of this Website -->
     <link rel="stylesheet" type="text/css" href="Main.css">
 </head>
 
 <body>
-
+<!-- This is the navigation bar located at the top of the screen. It serves as a way for users to navigate to different web pages. Note 
+the usage of ID's for the stylesheet -->
 <nav id="Summary">
     <ul id="menu">
         <li>
-            <a href="Home Page.html" class="active" onclick="resetActive()">
+            <!-- This is the home page button, which is first on the navigation bar. It is active, as the user is currently on the home (index) page. This is represented by its class -->
+            <a href="index.html" class="active" onclick="resetActive()">
                 Home
             </a>
         </li>
+        <!-- The Memori page button, which leads to the Memori web page (Memori.html) -->
         <li>
             <a href="Memori.html" onclick="resetActive()">
                 Memori
             </a>
         </li>
+        <!-- Etc. -->
         <li>
             <a href="Magnetic Motion Demo.html" onclick="resetActive()">
                 Magnetic Motion Demo
@@ -66,38 +73,46 @@
             </a>
         </li>
     </ul>
+    <!-- Whenever a button on the navigation bar is pressed, the source code tab currently highlighted is reset so that the active source code tab always appears as the first every time a new web page is loaded. This is explained in more detail below -->
     <script>
         function resetActive() {
             sessionStorage.setItem("ActiveSource", 0);
         }
     </script>
 </nav>
-
+    
+<!-- This is the secondary navigation bar that allows users to jump to sections of the web page quickly. It is vertical, as opposed to the earlier navigation bar, which was horizontal -->
 <div id="navbarVert">
     <ul id="navigation">
         <li>
+            <!-- Jumps to the beginning of the page (the summary of the Website) -->
             <a href="#Summary">Summary of Website</a>
         </li>
         <li>
             <br>
         </li>
         <li>
+            <!-- Jumps to the how and why this Website was created --> 
             <a href="#Code">Code of this Website</a>
         </li>
         <li>
             <br>
         </li>
         <li>
+            <!-- Jumps all the way down to the source code download of the Web Site -->
             <a href="#Download Link">Source Code Download</a>
         </li>
     </ul>
 </div>
 
+<!-- In this batch of code, the variable activeSource is defined. ActiveSource is the variable that is responsible for determining which page's source code is given. As this variable needs to persists through refreshes (as the method of changing the source code tab is to refresh the page loaded with a different activeSource variable), a sessionStorage data store is used. This store allows the activeSource variable to be kept through refreshes, and thus allows the activeSource variable to be used to determine which source code tab is loaded -->
 <script>
     var activeSource = -1;
+    // If there was a sessionStorage previously (not the first time user has opened this page) gets the activeSource variable from the key "ActiveSource". 
     if (typeof(Storage) !== "undefined") {
         if (sessionStorage.getItem("ActiveSource") !== null)
             activeSource = sessionStorage.getItem("ActiveSource");
+        // Otherwise, no sessionStorage was found previously (the first time the user has opened this page). Sets activeSource to zero.
         else {
             activeSource = 0;
             sessionStorage.setItem("ActiveSource", activeSource);
@@ -105,6 +120,7 @@
     }
 </script>
 
+<!-- The first text displayed. Welcomes the user to the page and expounds on the background of this Website -->
 <h1>
     Welcome to Inoculates Applications
 </h1>
@@ -131,7 +147,7 @@
 </p>
 
 <hr>
-
+<!-- A small portion on how the Website was made -->
 <h2 id="Code">
     How This Website Was Made
 </h2>
@@ -141,12 +157,14 @@
     Unlike my knowledge of software language and development, my experience in the realm of web development is very
     little, and I sought to improve it through the construction of this Website.
 </p>
-
+    
+<!-- Gives the source code for the Website -->
 <h3>
     Here's the source code for the pages of this Website.
-
+    
     <br>
 
+    <!-- These are the buttons that change the tabs for the source code. By clicking a button, the user will change what source code is displayed. This is achieved by refreshing the page and omitting unecessary scripts -->
     <button class="button" id="homepagebutton" onclick="changeButton(this)">
         Home Page Code
     </button>
@@ -159,13 +177,14 @@
     <button class="button" id="pixelknightbutton" onclick="changeButton(this)">
         Pixel Knight
     </button>
-    <button class="button" id="fatesreprisebutton" onclick="changeButton(this)">
-        Fate's Reprise
-    </button>
     <button class="button" id="darkandlightbutton" onclick="changeButton(this)">
         Dark and Light
     </button>
+    <button class="button" id="fatesreprisebutton" onclick="changeButton(this)">
+        Fate's Reprise
+    </button>
     <br>
+    <!-- Second row of buttons -->
     <button class="button" style="margin-left: 25px; margin-top: 5px;" id="colorsynthesizerbutton" onclick="changeButton(this)">
         Color Synthesizer
     </button>
@@ -184,37 +203,184 @@
 
     <br>
 
-    <span id="webpage">
-    <script src="https://gist.github.com/Inoculates/616bce104cb0e0473d01.js"></script>
+    <!-- This is where the actual source code is displayed. The source code is displayed via script from third party software (Gist). As the code can only be loaded by the loading of the page (due to the external script), I made a useful albeit unoptimal script to omit the extraneous loaded scripts by setting their innerHTMLs to null (""). In simpler words, I simply wipe the information off the spans (which contain the actual source code) that I dont' need -->
+    <span id="homepage">
+        <script src="https://gist.github.com/Inoculates/11720e671f7b86d10bad.js"></script>
     </span>
-    <span id="fatesreprisepage">
-    <script src="https://gist.github.com/Inoculates/e78bebd48fafd45f3c52.js"></script>
+    
+    <!-- This is the script that determines whether the span will continue to display information after loading -->
+    <script>
+        // Since activeSource is NOT equal to zero, the current tab is not the home page. Therefore, sets the innerHTML of the home page span to nothing (""), effectively effacing the script and making it seem as though it never existed. 
+        if (activeSource != 0)
+            document.getElementById("homepage").innerHTML = "";
+        // Else, since activeSource IS equal to zero, the current tab is the home page. Therefore, allows the innerHTML of the home page remain the source code, and sets all OTHER innerHTMLs to null. This effectively makes it appear as though the source code of the home page and the home page only is displaying. Also, highlights the home page button by making it the active class. 
+        else
+            document.getElementById("homepagebutton").className = "activebutton";
+    </script>
+    
+    <!-- And so on -->
+    <span id="memori">
+        <script src="https://gist.github.com/Inoculates/f62ee1b2db4dcd4f0cc9.js"></script>
     </span>
+
+    <script>
+        if (activeSource != 1)
+            document.getElementById("memori").innerHTML = "";
+        else
+            document.getElementById("memoributton").className = "activebutton";
+    </script>
+    
+    <span id="magneticmotion">
+        <script src="https://gist.github.com/Inoculates/d3cd6d36d44b335f0bf7.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 2)
+            document.getElementById("magneticmotion").innerHTML = "";
+        else
+            document.getElementById("magneticmotionbutton").className = "activebutton";
+    </script>
+    
+    <span id="pixelknight">
+        <script src="https://gist.github.com/Inoculates/6dc2f7969af07761c7b6.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 3)
+            document.getElementById("pixelknight").innerHTML = "";
+        else
+            document.getElementById("pixelknightbutton").className = "activebutton";
+    </script>
+    
+    <span id="darkandlight">
+        <script src="https://gist.github.com/Inoculates/9d3b48362253af86ee79.js"></script>
+    </span>
+
+    <script>
+        if (activeSource != 4)
+            document.getElementById("darkandlight").innerHTML = "";
+        else
+            document.getElementById("darkandlightbutton").className = "activebutton";
+    </script>
+    
+    <span id="fatesreprise">
+        <script src="https://gist.github.com/Inoculates/267fca4b9296942ff098.js"></script>
+    </span>
+    
+    <script>
+        if (activeSource != 5)
+            document.getElementById("fatesreprise").innerHTML = "";
+        else
+            document.getElementById("fatesreprisebutton").className = "activebutton";
+    </script>
+    
+    <span id="colorsynthesizer">
+        <script src="https://gist.github.com/Inoculates/bfd27c37fcf460ef5f18.js"></script>
+    </span>
+    
+    <script>
+        if (activeSource != 6)
+            document.getElementById("colorsynthesizer").innerHTML = "";
+        else
+            document.getElementById("colorsynthesizerbutton").className = "activebutton";
+    </script>
+    
+    <span id="documentencryptor">
+        <script src="https://gist.github.com/Inoculates/ba1f31127f85369c46a1.js"></script>
+    </span>
+    
+    <script>
+        if (activeSource != 7)
+            document.getElementById("documentencryptor").innerHTML = "";
+        else
+            document.getElementById("documentencryptorbutton").className = "activebutton";
+    </script>
+    
+    <span id="fileencryptor">
+            <script src="https://gist.github.com/Inoculates/2633bd0f2fe2c0227ffb.js"></script>
+    </span>
+    
+    <script>
+        if (activeSource != 8)
+            document.getElementById("fileencryptor").innerHTML = "";
+        else
+            document.getElementById("fileencryptorbutton").className = "activebutton";
+    </script>
+    
+    <span id="trafficdirector">
+        <script src="https://gist.github.com/Inoculates/2a773d98ef54a04c27c9.js"></script>
+    </span>
+    
+    <script>
+        if (activeSource != 9)
+            document.getElementById("trafficdirector").innerHTML = "";
+        else
+            document.getElementById("trafficdirectorbutton").className = "activebutton";
+    </script>
+    
+    <span id="spaceshooter">
+        <script src="https://gist.github.com/Inoculates/d6440e02c9a314bdf905.js"></script>
+    </span>
+    
+    <script>
+        if (activeSource != 10)
+            document.getElementById("spaceshooter").innerHTML = "";
+        else
+            document.getElementById("spaceshooterbutton").className = "activebutton";
+    </script>
 </h3>
 
+<!-- This function changes the sessionStorage value for ActiveSource and then reloads the page. This changes the source code tab displayed through the modification of the ActiveSource value and subsequent reloading, as clarified above -->
 <script>
-    if (activeSource != 0)
-        document.getElementById("webpage").innerHTML = "";
-    if (activeSource != 1)
-        document.getElementById("fatesreprisepage").innerHTML = "";
-
-    if (activeSource == 0)
-        document.getElementById("homepagebutton").className = "activebutton";
-    if (activeSource == 1)
-        document.getElementById("fatesreprisebutton").className = "activebutton";
-
     function changeButton(button) {
         if (button.id == "homepagebutton") {
             sessionStorage.setItem("ActiveSource", 0);
             location.reload();
         }
-        else if (button.id == "fatesreprisebutton") {
+        if (button.id == "memoributton") {
             sessionStorage.setItem("ActiveSource", 1);
+            location.reload();
+        }
+        if (button.id == "magneticmotionbutton") {
+            sessionStorage.setItem("ActiveSource", 2);
+            location.reload();
+        }
+        if (button.id == "pixelknightbutton") {
+            sessionStorage.setItem("ActiveSource", 3);
+            location.reload();
+        }
+        if (button.id == "darkandlightbutton") {
+            sessionStorage.setItem("ActiveSource", 4);
+            location.reload();
+        }
+        if (button.id == "fatesreprisebutton") {
+            sessionStorage.setItem("ActiveSource", 5);
+            location.reload();
+        }
+        if (button.id == "colorsynthesizerbutton") {
+            sessionStorage.setItem("ActiveSource", 6);
+            location.reload();
+        }
+        if (button.id == "documentencryptorbutton") {
+            sessionStorage.setItem("ActiveSource", 7);
+            location.reload();
+        }
+        if (button.id == "fileencryptorbutton") {
+            sessionStorage.setItem("ActiveSource", 8);
+            location.reload();
+        }
+            if (button.id == "trafficdirectorbutton") {
+            sessionStorage.setItem("ActiveSource", 9);
+            location.reload();
+        }
+        else if (button.id == "spaceshooterbutton") {
+            sessionStorage.setItem("ActiveSource", 10);
             location.reload();
         }
     }
 </script>
 
+<!-- This image is used as a link to the github page for the WebSite. Note that it uses an area map, as the image shape is circular and therefore ill represented by the basic square frame -->
 <p>
     Here is a link to my github project for this Website:
     <img src="Assets/github.png" alt="Github Link" style="width:60px; height:60px; border:0" align="middle"
@@ -222,12 +388,13 @@
 
     <map name="githubmap">
         <area shape="circle" coords="60 60 60" style="border: none; outline-style: none;"
-              href="https://github.com/Inoculates/Dark-and-Light">
+              href="https://github.com/Inoculates/Inoculates.github.io">
     </map>
 </p>
 
 <hr>
 
+<!-- The download link for the source code. Note that for the other pages, the game/application itself is used (with the exception of Traffic Director) -->
 <h6 id="Download Link">
     Source Code Download
     <a href="Assets/DarkLight.zip" target="_blank">
@@ -241,8 +408,9 @@
     <br>
 </p>
 
+<!-- Simple copyright + email address -->
 <footer>
-    Copyright © Akshay Subramaniam
+    Copyright © Akshay Subramaniam -- Email Akshay.SG14@gmail.com for any issues
 </footer>
 </body>
 </html>
