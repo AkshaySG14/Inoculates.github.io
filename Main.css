@@ -26,7 +26,7 @@
         }
 /* The left bar that helps the user navigate to certain areas. */
         div#navbarVert {
-            padding: 1.5vw 5px;
+            padding: 1.75vw 5px;
             position: fixed;
             top: 0;
             left: 0;
@@ -100,13 +100,14 @@
             color: black;
             background-color: lightgray;
             text-decoration: none;
-            border-radius: 80px 80px 80px 80px;
+            border-radius: 5vw 5vw 5vw 5vw;
             text-align: center;
             font-size: 16px; 
             /* Note the scaling by viewport width. */
             font-size: 1vw;
             padding: 0.5vw 1.05vw;
             margin-left: 0.6vw;
+            margin-top 0.5vw;
         }
 /* The CSS that makes the page buttons turn white when pressed. */
         ul#menu li a.active {
@@ -119,7 +120,7 @@
         }
 /* The menu for the top bar that holds all the pages. Has the padding and the infinite width. */
         ul#menu {
-            padding: 5px;
+            padding: 0.45vw;
             width: 100%;
             margin: 0 auto;
         }
