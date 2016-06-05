@@ -11,7 +11,7 @@
             top: 0;
             left: 0;
             background-color: dimgray;
-            height: 30px;
+            height: 2.5vw;
             z-index: 10;
         }
 /* The bottom bar that indicates my email address. */
@@ -27,7 +27,7 @@
         }
 /* The left bar that helps the user navigate to certain areas. */
         div#navbarVert {
-            padding: 15px 5px;
+            padding: 1.5vw 5px;
             position: fixed;
             top: 0;
             left: 0;
@@ -141,7 +141,8 @@
         }
 /* The CSS for the headers, which contain the padding and font sizes. */
         h1, h2, h3, h4, h5, h6 {
-            margin-bottom: 2px;
+            margin-top: 2vw;
+            margin-bottom: 0.5vh;
             margin-left: 8vw; padding: 10px 0; font-size: 200%;
         }
 /* The CSS for the items inside the body. Most notably used for its scalable right margin. */
