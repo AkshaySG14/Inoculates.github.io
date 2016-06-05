@@ -32,7 +32,7 @@
             top: 0;
             left: 0;
             background-color: ghostwhite;
-            width: 125px;
+            width: 7vw;
             height: 100%;
             overflow: auto;
             z-index: 0;
@@ -142,10 +142,10 @@
 /* The CSS for the headers, which contain the padding and font sizes. */
         h1, h2, h3, h4, h5, h6 {
             margin-bottom: 2px;
-            margin-left: 140px; padding: 10px 0; font-size: 200%;
+            margin-left: 8vw; padding: 10px 0; font-size: 200%;
         }
 /* The CSS for the items inside the body. Most notably used for its scalable right margin. */
         p, pre {
             margin-top: 2px;
-            margin-left: 140px; margin-right: 5vw;
+            margin-left: 8vw; margin-right: 5vw;
         }
