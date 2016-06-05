@@ -23,7 +23,7 @@
             text-align: center;
             bottom: 0;
             float: bottom;
-            font-size: 1.25vw;
+            font-size: 1vw;
         }
 /* The left bar that helps the user navigate to certain areas. */
         div#navbarVert {
@@ -105,7 +105,7 @@
             text-align: center;
             font-size: 16px; 
             /* Note the scaling by viewport width. */
-            font-size: 1.1vw;
+            font-size: 1vw;
             padding: 5px 1vw;
         }
 /* The CSS that makes the page buttons turn white when pressed. */
