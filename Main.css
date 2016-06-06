@@ -119,7 +119,7 @@
         }
 /* The menu for the top bar that holds all the pages. Has the padding and the infinite width. */
         ul#menu {
-            padding: 0.6vw;
+            padding: 0.5vw;
             width: 100%;
             margin: 0 auto;
             margin-left: 0.2vw
