@@ -107,6 +107,7 @@
             font-size: 1vw;
             padding: 0.5vw 1.4vw;
             margin-top 0.5vw;
+            align-content: center;
         }
 /* The CSS that makes the page buttons turn white when pressed. */
         ul#menu li a.active {
