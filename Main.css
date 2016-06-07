@@ -94,6 +94,8 @@
 /* The list for the top bar that holds all the different pages. */
         ul#menu li {
             display: inline;
+            text-align: center;
+            align-items: center;
         }
 /* The individual units of the menu (pages of the website). */
         ul#menu li a {
@@ -104,8 +106,6 @@
             /* Note the scaling by viewport width. */
             font-size: 1vw;
             padding: 0.5vw 1.3vw;
-            text-align: center;
-            align-items: center;
         }
 /* The CSS that makes the page buttons turn white when pressed. */
         ul#menu li a.active {
@@ -122,8 +122,6 @@
             width: 100%;
             margin: 0 auto;
             margin-left: 0.5vw;
-            align-content: center;
-            align-items: center;
         }
 /* The menu for the left bar that holds all the bookmarks. */
         ul#navigation {
