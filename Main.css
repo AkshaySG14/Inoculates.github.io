@@ -104,8 +104,8 @@
             text-decoration: none;
             border-radius: 5vw 5vw 5vw 5vw;
             /* Note the scaling by viewport width. */
-            font-size: 1vw;
-            padding: 0.5vw 1.3vw;
+            font-size: 1.25vw;
+            padding: 0.5vw;
         }
 /* The CSS that makes the page buttons turn white when pressed. */
         ul#menu li a.active {
@@ -121,7 +121,7 @@
             padding: 0.4vw;
             width: 100%;
             margin: 0 auto;
-            margin-left: 0.5vw;
+            margin-left: 0.9vw;
         }
 /* The menu for the left bar that holds all the bookmarks. */
         ul#navigation {
