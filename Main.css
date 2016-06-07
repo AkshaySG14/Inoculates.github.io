@@ -70,7 +70,7 @@
             background-color: limegreen;
             text-align: center;
             text-decoration: none;
-            padding: 5px 1vw;
+            padding: 4px 1vw;
             font-size: 1.1vw;
             cursor: pointer;
             border-radius: 8px;
@@ -103,7 +103,7 @@
             border-radius: 5vw 5vw 5vw 5vw;
             /* Note the scaling by viewport width. */
             font-size: 1vw;
-            padding: 0.5vw 1.4vw;
+            padding: 0.5vw 1.3vw;
             text-align: center;
             align-items: center;
         }
@@ -121,7 +121,7 @@
             padding: 0.4vw;
             width: 100%;
             margin: 0 auto;
-            margin-left: 0.2vw;
+            margin-left: 0.5vw;
             align-content: center;
             align-items: center;
         }
