@@ -11,8 +11,9 @@
             top: 0;
             left: 0;
             background-color: dimgray;
-            height: 2.4vw;
+            height: 2.5vw;
             z-index: 10;
+            text-align: center;
         }
 /* The bottom bar that indicates my email address. */
         footer {
@@ -35,6 +36,7 @@
             height: 100%;
             overflow: auto;
             z-index: 0;
+            font-size: 1.25vw;
         }
 /* The buttons for the different source code pages. */
         .button {
@@ -94,8 +96,6 @@
 /* The list for the top bar that holds all the different pages. */
         ul#menu li {
             display: inline;
-            text-align: center;
-            align-items: center;
         }
 /* The individual units of the menu (pages of the website). */
         ul#menu li a {
@@ -104,9 +104,9 @@
             text-decoration: none;
             border-radius: 5vw 5vw 5vw 5vw;
             /* Note the scaling by viewport width. */
-            font-size: 1.26vw;
-            padding: 0.5vw 0.62vw;
-            margin-left: 0.01vw;
+            font-size: 1.25vw;
+            padding: 0.5vw;
+            margin-left: 0.05vw;
         }
 /* The CSS that makes the page buttons turn white when pressed. */
         ul#menu li a.active {
@@ -119,9 +119,11 @@
         }
 /* The menu for the top bar that holds all the pages. Has the padding and the infinite width. */
         ul#menu {
-            padding: 0.4vw;
             width: 100%;
-            margin: 0 auto;
+            margin: 0;
+            padding: 0.5vw;
+            display: inline-block;
+            text-align: justify;
         }
 /* The menu for the left bar that holds all the bookmarks. */
         ul#navigation {
@@ -152,7 +154,7 @@
 
 /* The CSS for any images on the website. */ 
         img {
-            border-radius: 15px;
+            border-radius: 10px;
             margin-right: 0.5vw;
             margin-top: 0.5vw;
             white-space: nowrap;
