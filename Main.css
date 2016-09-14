@@ -19,9 +19,9 @@
             background-color: black;
             color: white;
             clear: both;
-            height: 3vh;
+            height: 25px;
             text-align: center;
-            float: bottom;
+            float: center;
             font-size: 17.5px;
         }
 /* The left bar that helps the user navigate to certain areas. */
