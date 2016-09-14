@@ -11,7 +11,7 @@
             top: 0;
             left: 0;
             background-color: dimgray;
-            height: 2.7vw;
+            height: 32.5px;
             z-index: 10;
         }
 /* The bottom bar that indicates my email address. */
@@ -22,7 +22,7 @@
             height: 3vh;
             text-align: center;
             float: bottom;
-            font-size: 100%;
+            font-size: 17.5px;
         }
 /* The left bar that helps the user navigate to certain areas. */
         div#navbarVert {
@@ -35,7 +35,7 @@
             height: 100%;
             overflow: auto;
             z-index: 0;
-            font-size: 100%;
+            font-size: 15px;
         }
 /* The buttons for the different source code pages. */
         .button {
@@ -44,12 +44,11 @@
             background-color: indianred;
             text-align: center;
             text-decoration: none;
-            padding: 5px 1vw;
-            font-size: 1.1vw;
+            padding: 5px 4px;
+            font-size: 15px;
             cursor: pointer;
             border-radius: 8px;
             border: 1px solid darkred;
-
             -webkit-transition-duration: 0.2s;
             transition-duration: 0.2s;
         }
@@ -71,8 +70,8 @@
             background-color: limegreen;
             text-align: center;
             text-decoration: none;
-            padding: 4px 1vw;
-            font-size: 1.1vw;
+            padding: 4px 4px;
+            font-size: 15px;
             cursor: pointer;
             border-radius: 8px;
             border: 1px solid darkgreen;
@@ -103,8 +102,7 @@
             background-color: lightgray;
             text-decoration: none;
             border-radius: 5vw 5vw 5vw 5vw;
-            /* Note the scaling by viewport width. */
-            font-size: 100%;
+            font-size: 15px;
             padding: 0.5vw 0.6vw;
             margin-left: 0.1vw;
             float: left;
