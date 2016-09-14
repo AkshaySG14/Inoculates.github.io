@@ -22,7 +22,7 @@
             height: 3vh;
             text-align: center;
             float: bottom;
-            font-size: 1.25vw;
+            font-size: 100%;
         }
 /* The left bar that helps the user navigate to certain areas. */
         div#navbarVert {
@@ -35,7 +35,7 @@
             height: 100%;
             overflow: auto;
             z-index: 0;
-            font-size: 1.25vw;
+            font-size: 100%;
         }
 /* The buttons for the different source code pages. */
         .button {
@@ -104,7 +104,7 @@
             text-decoration: none;
             border-radius: 5vw 5vw 5vw 5vw;
             /* Note the scaling by viewport width. */
-            font-size: 1.25vw;
+            font-size: 100%;
             padding: 0.5vw 0.6vw;
             margin-left: 0.1vw;
             float: left;
