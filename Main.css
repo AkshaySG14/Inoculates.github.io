@@ -26,7 +26,7 @@
         }
 /* The left bar that helps the user navigate to certain areas. */
         div#navbarVert {
-            padding: 20px 5px;
+            padding: 25px 5px;
             position: fixed;
             top: 0;
             left: 0;
