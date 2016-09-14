@@ -11,7 +11,7 @@
             top: 0;
             left: 0;
             background-color: dimgray;
-            height: 32.5px;
+            height: 35px;
             z-index: 10;
         }
 /* The bottom bar that indicates my email address. */
@@ -26,12 +26,12 @@
         }
 /* The left bar that helps the user navigate to certain areas. */
         div#navbarVert {
-            padding: 1.75vw 5px;
+            padding: 20px 5px;
             position: fixed;
             top: 0;
             left: 0;
             background-color: ghostwhite;
-            width: 7vw;
+            width: 75px;
             height: 100%;
             overflow: auto;
             z-index: 0;
@@ -101,10 +101,10 @@
             color: black;
             background-color: lightgray;
             text-decoration: none;
-            border-radius: 5vw 5vw 5vw 5vw;
+            border-radius: 20px 20px 20px 20px;
             font-size: 15px;
-            padding: 0.5vw 0.6vw;
-            margin-left: 0.1vw;
+            padding: 7.5px 7.5px;
+            margin-left: 2px;
             float: left;
         }
 /* The CSS that makes the page buttons turn white when pressed. */
@@ -118,7 +118,7 @@
         }
 /* The menu for the top bar that holds all the pages. Has the padding and the infinite width. */
         ul#menu {
-            padding: 0.1vw 0.1vw;
+            padding: 1px 1px;
             width: 100%;
             margin: 0 auto;
             text-align: center;
